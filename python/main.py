@@ -270,6 +270,15 @@ def extrair_dados_rotulo(
             texto
         )
 
+    elif "ingr.:" in texto_minusculo:
+        inicio_ingredientes = (
+            texto_minusculo.find(
+                "ingr.:"
+            )
+            +
+            len("ingr.:")
+        )
+
 
         # Palavras que podem indicar
         # que a parte dos ingredientes acabou
