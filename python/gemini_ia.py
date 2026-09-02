@@ -17,7 +17,7 @@ Este foi o JSON gerado pelo sistema:
 
 {resultado_regras}
 
-Analise cada ingrediente e separadamente e veja se ele apresenta uma relação com cada uma das restrições mencionadas no json.
+Analise cada ingrediente separadamente e veja se ele apresenta uma relação com cada uma das restrições mencionadas no json.
 Depois, gere um pegueno texto explicativo com base nessa análise, respondendo:
 
 1. O alimento é seguro para consumo?

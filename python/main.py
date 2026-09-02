@@ -6,6 +6,8 @@ from fastapi import (
     HTTPException
 )
 
+import re
+
 from pydantic import BaseModel
 
 from regras import regras
@@ -49,6 +51,8 @@ class Dados(BaseModel):
     nome_produto: str
 
     ingredientes: str
+
+    advertencias: str
 
     restricoes: list[str]
 
@@ -122,7 +126,7 @@ async def executar_ocr(
     }
 
 
-    # Arquivo que será enviado
+    # Arquivo enviado para OCR.Space
     files = {
         "file": (
             imagem.filename,
@@ -155,15 +159,15 @@ async def executar_ocr(
         )
 
 
-    # Caso a própria requisição HTTP dê erro
+    # Verifica erros HTTP
     resposta.raise_for_status()
 
 
-    # Converte a resposta para JSON
+    # Converte resposta JSON
     resultado = resposta.json()
 
 
-    # Verifica se a OCR informou erro
+    # Verifica erro informado pela OCR
     if resultado.get(
         "IsErroredOnProcessing"
     ):
@@ -177,14 +181,14 @@ async def executar_ocr(
         )
 
 
-    # Pega os resultados da OCR
+    # Pega resultados encontrados
     parsed_results = resultado.get(
         "ParsedResults",
         []
     )
 
 
-    # Verifica se encontrou algum texto
+    # Se não encontrou texto
     if not parsed_results:
 
         raise HTTPException(
@@ -196,7 +200,7 @@ async def executar_ocr(
         )
 
 
-    # Pega somente o texto reconhecido
+    # Pega o texto reconhecido
     texto = parsed_results[0].get(
         "ParsedText",
         ""
@@ -214,47 +218,42 @@ def extrair_dados_rotulo(
     texto_ocr
 ):
 
-    # --------------------------
-    # LIMPEZA DO TEXTO
-    # --------------------------
+    # ==========================
+    # LIMPEZA
+    # ==========================
 
-    # Remove retorno de carro
     texto = texto_ocr.replace(
         "\r",
         " "
     )
 
-    # Remove quebra de linha
     texto = texto.replace(
         "\n",
         " "
     )
 
-    # Remove espaços duplicados
     texto = " ".join(
         texto.split()
     )
 
 
-    # Cria uma cópia em minúsculas
-    # para facilitar as buscas
     texto_minusculo = texto.lower()
 
 
-    # Variáveis onde vamos guardar
-    # as informações encontradas
     ingredientes = ""
-    alergicos = ""
+
+    advertencias = ""
 
 
     # ==========================
     # EXTRAIR INGREDIENTES
     # ==========================
 
+    inicio_ingredientes = -1
+
+
     if "ingredientes:" in texto_minusculo:
 
-        # Descobre onde termina
-        # a palavra INGREDIENTES:
         inicio_ingredientes = (
             texto_minusculo.find(
                 "ingredientes:"
@@ -264,13 +263,8 @@ def extrair_dados_rotulo(
         )
 
 
-        # Inicialmente consideramos
-        # que vai até o fim do texto
-        fim_ingredientes = len(
-            texto
-        )
-
     elif "ingr.:" in texto_minusculo:
+
         inicio_ingredientes = (
             texto_minusculo.find(
                 "ingr.:"
@@ -280,22 +274,42 @@ def extrair_dados_rotulo(
         )
 
 
-        # Palavras que podem indicar
-        # que a parte dos ingredientes acabou
-        palavras_fim = [
+    # Se encontrou ingredientes
+    if inicio_ingredientes != -1:
+
+        fim_ingredientes = len(
+            texto
+        )
+
+
+        # Marcadores que podem aparecer
+        # DEPOIS dos ingredientes
+        palavras_fim_ingredientes = [
+
             "alérgicos:",
             "alergicos:",
-            "contém",
-            "contem",
-            "não contém",
-            "nao contem",
-            "pode conter"
+
+            "alérgico:",
+            "alergico:",
+
+            "contém glúten",
+            "contem gluten",
+
+            "não contém glúten",
+            "nao contem gluten",
+
+            "pode conter",
+
+            "informação nutricional",
+            "informacao nutricional"
         ]
 
 
-        # Procura cada possível marcador
-        for palavra in palavras_fim:
+        for palavra in palavras_fim_ingredientes:
 
+            # IMPORTANTE:
+            # procura SOMENTE depois
+            # do início dos ingredientes
             posicao = (
                 texto_minusculo.find(
                     palavra,
@@ -304,9 +318,6 @@ def extrair_dados_rotulo(
             )
 
 
-            # Se encontrou a palavra
-            # e ela aparece antes do
-            # fim atual
             if (
                 posicao != -1
                 and
@@ -318,7 +329,6 @@ def extrair_dados_rotulo(
                 )
 
 
-        # Recorta somente os ingredientes
         ingredientes = texto[
             inicio_ingredientes:
             fim_ingredientes
@@ -326,61 +336,153 @@ def extrair_dados_rotulo(
 
 
     # ==========================
-    # EXTRAIR ALÉRGICOS
+    # EXTRAIR ADVERTÊNCIAS
     # ==========================
 
-    # -1 significa:
-    # ainda não encontramos
-    inicio_alergicos = -1
+    inicio_advertencias = -1
 
 
-    # Primeiro procura com acento
+    # Primeiro tenta localizar
+    # ALÉRGICOS:
     if "alérgicos:" in texto_minusculo:
 
-        inicio_alergicos = (
+        inicio_advertencias = (
             texto_minusculo.find(
                 "alérgicos:"
             )
-            +
-            len("alérgicos:")
         )
 
 
-    # Se não encontrar,
-    # procura sem acento
     elif "alergicos:" in texto_minusculo:
 
-        inicio_alergicos = (
+        inicio_advertencias = (
             texto_minusculo.find(
                 "alergicos:"
             )
-            +
-            len("alergicos:")
         )
 
 
-    # Se encontrou ALÉRGICOS:
-    if inicio_alergicos != -1:
+    elif "alérgico:" in texto_minusculo:
 
-        # Inicialmente consideramos
-        # que vai até o fim do texto
-        fim_alergicos = len(
+        inicio_advertencias = (
+            texto_minusculo.find(
+                "alérgico:"
+            )
+        )
+
+
+    elif "alergico:" in texto_minusculo:
+
+        inicio_advertencias = (
+            texto_minusculo.find(
+                "alergico:"
+            )
+        )
+
+
+    # Caso não exista ALÉRGICOS:
+    # procura outros marcadores
+    else:
+
+        marcadores_advertencias = [
+
+            "contém glúten",
+            "contem gluten",
+
+            "não contém glúten",
+            "nao contem gluten",
+
+            "pode conter"
+        ]
+
+
+        for marcador in marcadores_advertencias:
+
+            posicao = (
+                texto_minusculo.find(
+                    marcador
+                )
+            )
+
+
+            if posicao != -1:
+
+                if (
+                    inicio_advertencias == -1
+                    or
+                    posicao < inicio_advertencias
+                ):
+
+                    inicio_advertencias = (
+                        posicao
+                    )
+
+
+    # ==========================
+    # DEFINIR FIM DAS ADVERTÊNCIAS
+    # ==========================
+
+    if inicio_advertencias != -1:
+
+        fim_advertencias = len(
             texto
         )
 
 
-        # Recorta somente a parte
-        # que vem depois de ALÉRGICOS:
-        alergicos = texto[
-            inicio_alergicos:
-            fim_alergicos
+        palavras_fim_advertencias = [
+
+            "informação nutricional",
+            "informacao nutricional",
+
+            "porção",
+            "porcao",
+
+            "valor energético",
+            "valor energetico"
+        ]
+
+
+        for palavra in palavras_fim_advertencias:
+
+            # IMPORTANTE:
+            # procura somente DEPOIS
+            # do início das advertências
+            posicao = (
+                texto_minusculo.find(
+                    palavra,
+                    inicio_advertencias
+                )
+            )
+
+
+            if (
+                posicao != -1
+                and
+                posicao < fim_advertencias
+            ):
+
+                fim_advertencias = (
+                    posicao
+                )
+
+
+        advertencias = texto[
+            inicio_advertencias:
+            fim_advertencias
         ].strip()
 
 
-    # Devolve os dois resultados
+    # ==========================
+    # RETORNO
+    # ==========================
+
     return {
-        "ingredientes": ingredientes,
-        "alergicos": alergicos
+
+        "ingredientes":
+            ingredientes,
+
+        "advertencias":
+            advertencias
     }
 
 
@@ -391,20 +493,32 @@ def extrair_dados_rotulo(
 def executar_analise(
     nome_produto,
     ingredientes,
+    advertencias,
     restricoes
 ):
 
-    # Separa os ingredientes
-    # usando a vírgula
-    lista_ingredientes = [
-        normalizar(i)
-        for i
-        in ingredientes.split(",")
+    # ==========================
+    # PREPARAR INGREDIENTES
+    # ==========================
+
+    lista_ingredientes = [ 
+        normalizar(i) for i in re.split(r"\s*,\s* | \s*;\s* | \s*\.\s* | \s+e\s+", ingredientes)
     ]
 
 
-    # Normaliza as restrições
-    restricoes_normalizadas = [
+    # ==========================
+    # PREPARAR ADVERTÊNCIAS
+    # ==========================
+
+    lista_advertencias = [
+        normalizar (i) for i in re.split(r"\s*,\s* | \s*;\s* | \s*\.\s* | \s+e\s+", advertencias)
+    ]
+
+    # ==========================
+    # PREPARAR RESTRIÇÕES
+    # ==========================
+
+    lista_restricoes = [
         normalizar(r)
         for r
         in restricoes
@@ -414,11 +528,12 @@ def executar_analise(
     motivos = []
 
 
-    # Percorre todos os ingredientes
+    # ==========================
+    # ANALISAR INGREDIENTES
+    # ==========================
+
     for ingrediente in lista_ingredientes:
 
-        # Verifica se existe
-        # no dicionário regras
         if ingrediente in regras:
 
             restricao_necessaria = (
@@ -428,22 +543,78 @@ def executar_analise(
             )
 
 
-            # Verifica se o usuário
-            # possui essa restrição
             if (
                 restricao_necessaria
                 in
-                restricoes_normalizadas
+                lista_restricoes
             ):
 
-                motivos.append(
+                mensagem = (
                     regras[
                         ingrediente
                     ]["mensagem"]
                 )
 
 
-    # Se encontrou algum problema
+                if mensagem not in motivos:
+
+                    motivos.append(
+                        mensagem
+                    )
+
+
+    # ==========================
+    # ANALISAR ADVERTÊNCIAS
+    # ==========================
+
+    for ingrediente, dados_regra in regras.items():
+
+        ingrediente_normalizado = (
+            normalizar(
+                ingrediente
+            )
+        )
+
+
+        # Procura o ingrediente
+        # dentro das advertências
+        if (
+            ingrediente_normalizado
+            in
+            lista_advertencias
+        ):
+
+            restricao_necessaria = (
+                dados_regra[
+                    "restricao"
+                ]
+            )
+
+
+            if (
+                restricao_necessaria
+                in
+                lista_restricoes
+            ):
+
+                mensagem = (
+                    dados_regra[
+                        "mensagem"
+                    ]
+                )
+
+
+                if mensagem not in motivos:
+
+                    motivos.append(
+                        mensagem
+                    )
+
+
+    # ==========================
+    # RESULTADO
+    # ==========================
+
     if motivos:
 
         resposta = {
@@ -453,6 +624,9 @@ def executar_analise(
 
             "ingredientes":
                 ingredientes,
+
+            "advertencias":
+                advertencias,
 
             "restricoes":
                 restricoes,
@@ -465,7 +639,6 @@ def executar_analise(
         }
 
 
-    # Se não encontrou problemas
     else:
 
         resposta = {
@@ -475,6 +648,9 @@ def executar_analise(
 
             "ingredientes":
                 ingredientes,
+
+            "advertencias":
+                advertencias,
 
             "restricoes":
                 restricoes,
@@ -487,8 +663,6 @@ def executar_analise(
         }
 
 
-    # Depois das regras,
-    # envia também para a IA
     return analisar_com_ia(
         resposta
     )
@@ -522,6 +696,8 @@ def analisar(
 
         dados.ingredientes,
 
+        dados.advertencias,
+
         dados.restricoes
     )
 
@@ -540,18 +716,18 @@ async def analisar_imagem(
     restricoes: str = Form(...)
 ):
 
-    # --------------------------
+    # ==========================
     # 1. OCR
-    # --------------------------
+    # ==========================
 
     texto_ocr = await executar_ocr(
         imagem
     )
 
 
-    # --------------------------
-    # 2. SEPARAR RÓTULO
-    # --------------------------
+    # ==========================
+    # 2. EXTRAIR RÓTULO
+    # ==========================
 
     dados_rotulo = (
         extrair_dados_rotulo(
@@ -567,20 +743,16 @@ async def analisar_imagem(
     )
 
 
-    alergicos = (
+    advertencias = (
         dados_rotulo[
-            "alergicos"
+            "advertencias"
         ]
     )
 
 
-    # --------------------------
-    # 3. RESTRIÇÕES
-    # --------------------------
-
-    # No Swagger você pode escrever:
-    #
-    # gluten,lactose,soja
+    # ==========================
+    # 3. RESTRIÇÕES DO USUÁRIO
+    # ==========================
 
     lista_restricoes = [
         r.strip()
@@ -589,9 +761,9 @@ async def analisar_imagem(
     ]
 
 
-    # --------------------------
+    # ==========================
     # 4. ANÁLISE
-    # --------------------------
+    # ==========================
 
     analise = executar_analise(
 
@@ -599,13 +771,15 @@ async def analisar_imagem(
 
         ingredientes,
 
+        advertencias,
+
         lista_restricoes
     )
 
 
-    # --------------------------
-    # 5. RESULTADO FINAL
-    # --------------------------
+    # ==========================
+    # 5. RETORNO FINAL
+    # ==========================
 
     return {
 
@@ -615,9 +789,12 @@ async def analisar_imagem(
         "ingredientes_extraidos":
             ingredientes,
 
-        "alergicos_extraidos":
-            alergicos,
+        "advertencias_extraidas":
+            advertencias,
 
         "analise":
             analise
     }
+    # ==========================
+    # Terminamosss (????)
+    # ==========================
