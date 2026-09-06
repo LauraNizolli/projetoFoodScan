@@ -292,7 +292,7 @@ def extrair_dados_rotulo(
             "alérgico:",
             "alergico:",
 
-            "contém glúten",
+            "contém",
             "contem gluten",
 
             "não contém glúten",
@@ -349,7 +349,7 @@ def extrair_dados_rotulo(
         inicio_advertencias = (
             texto_minusculo.find(
                 "alérgicos:"
-            )
+            ) + len("alérgicos:")
         )
 
 
@@ -358,7 +358,7 @@ def extrair_dados_rotulo(
         inicio_advertencias = (
             texto_minusculo.find(
                 "alergicos:"
-            )
+            ) + len("alergicos:")
         )
 
 
@@ -367,7 +367,7 @@ def extrair_dados_rotulo(
         inicio_advertencias = (
             texto_minusculo.find(
                 "alérgico:"
-            )
+            ) + len("alérgico:")
         )
 
 
@@ -376,7 +376,7 @@ def extrair_dados_rotulo(
         inicio_advertencias = (
             texto_minusculo.find(
                 "alergico:"
-            )
+            ) + len("alergico:")
         )
 
 
@@ -401,7 +401,7 @@ def extrair_dados_rotulo(
             posicao = (
                 texto_minusculo.find(
                     marcador
-                )
+                ) + len(marcador)
             )
 
 
@@ -438,7 +438,9 @@ def extrair_dados_rotulo(
             "porcao",
 
             "valor energético",
-            "valor energetico"
+            "valor energetico",
+
+            "modo de conservação"
         ]
 
 
@@ -502,7 +504,7 @@ def executar_analise(
     # ==========================
 
     lista_ingredientes = [ 
-        normalizar(i) for i in re.split(r"\s*,\s* | \s*;\s* | \s*\.\s* | \s+e\s+", ingredientes)
+        normalizar(i) for i in re.split(r"\s*,\s* | \s*;\s* | \s*\.\s* | \s+e\s+ | \s*:\s*", ingredientes)
     ]
 
 
@@ -511,7 +513,7 @@ def executar_analise(
     # ==========================
 
     lista_advertencias = [
-        normalizar (i) for i in re.split(r"\s*,\s* | \s*;\s* | \s*\.\s* | \s+e\s+", advertencias)
+        normalizar (i) for i in re.split(r"\s*,\s* | \s*;\s* | \s*\.\s* | \s+e\s+ | \s*:\s*", advertencias)
     ]
 
     # ==========================
@@ -663,9 +665,7 @@ def executar_analise(
         }
 
 
-    return analisar_com_ia(
-        resposta
-    )
+    return analisar_com_ia(resposta)
 
 
 # ==========================
@@ -687,18 +687,21 @@ def home():
 
 @app.post("/analisar")
 def analisar(
-    dados: Dados
+    nome_produto: str = Form(...),
+    ingredientes: str = Form(...),
+    advertencias: str = Form(...),
+    restricoes: str = Form(...)
 ):
 
     return executar_analise(
 
-        dados.nome_produto,
+        nome_produto,
 
-        dados.ingredientes,
+        ingredientes,
 
-        dados.advertencias,
+        advertencias,
 
-        dados.restricoes
+        restricoes
     )
 
 

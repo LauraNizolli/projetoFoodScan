@@ -1055,10 +1055,6 @@ regras = {
         "restricao": "gluten",
         "mensagem": "Contém farelo de aveia; pode ser incompatível com restrição ao glúten"
     },
-    "fibra de aveia": {
-        "restricao": "gluten",
-        "mensagem": "Contém fibra de aveia; pode ser incompatível com restrição ao glúten"
-    },
     "bebida de aveia": {
         "restricao": "gluten",
         "mensagem": "Contém bebida de aveia; pode ser incompatível com restrição ao glúten"
@@ -1660,6 +1656,10 @@ regras = {
         "restricao": "gluten",
         "mensagem": "O rótulo informa: pode conter glúten"
     },
+    "pode conter centeio":{
+        "restricao": "gluten",
+        "mensagem": "O rótulo informa: pode conter centeio"
+    },
     "pode conter leite": {
         "restricao": "lactose",
         "mensagem": "O rótulo informa: pode conter leite"
@@ -1723,5 +1723,20 @@ regras = {
     "pode conter latex": {
         "restricao": "latex",
         "mensagem": "O rótulo informa: pode conter látex"
-    }
+    },
+    # =========================
+    # FIBRAS
+    # =========================
+    "fibra de trigo": {
+        "restricao": "glúten",
+        "mensagem": "Contém fibra de trigo; é incompatível com restrição ao glúten"
+    },
+    "fibra de soja": {
+            "restricao": "soja",
+            "mensagem": "Contém fibra de soja; é incompatível com restrição à soja"
+        },
+    "fibra de aveia": {
+            "restricao": "glúten",
+            "mensagem": "Contém fibra de aveia; pode ser incompatível com restrição ao glúten"
+        }
 }
