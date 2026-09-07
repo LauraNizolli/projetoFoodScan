@@ -103,6 +103,8 @@ def analisar_com_ia(resposta: dict):
 async def executar_ocr(
     imagem: UploadFile
 ):
+    
+    print("OCR encontrada:", bool(os.getenv("OCR_SPACE_API_KEY")))
 
     # Verifica se a chave existe
     if not OCR_API_KEY:
@@ -291,9 +293,11 @@ def extrair_dados_rotulo(
 
             "alérgico:",
             "alergico:",
+            
+            # tirar o "glúten"
 
-            "contém",
-            "contem gluten",
+            "contém", 
+            "contem",
 
             "não contém glúten",
             "nao contem gluten",
