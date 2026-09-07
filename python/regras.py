@@ -241,31 +241,31 @@ regras = {
 
     "leite": { 
         "restricao": "leite", 
-        "mensagem": "Contém leite, incompatível com restrição à lactose" 
+        "mensagem": "Contém leite, incompatível com restrição à leite" 
     }, 
     "leite integral": { 
         "restricao": "leite", 
-        "mensagem": "Contém leite integral, incompatível com restrição à lactose" 
+        "mensagem": "Contém leite integral, incompatível com restrição à leite" 
     }, 
     "leite semidesnatado": { 
         "restricao": "leite", 
-        "mensagem": "Contém leite semidesnatado, incompatível com restrição à lactose" 
+        "mensagem": "Contém leite semidesnatado, incompatível com restrição à leite" 
     }, 
     "leite desnatado": { 
         "restricao": "leite", 
-        "mensagem": "Contém leite desnatado, incompatível com restrição à lactose" 
+        "mensagem": "Contém leite desnatado, incompatível com restrição à leite" 
     }, 
     "leite em po": { 
         "restricao": "leite", 
-        "mensagem": "Contém leite em pó, incompatível com restrição à lactose" 
+        "mensagem": "Contém leite em pó, incompatível com restrição à leite" 
     }, 
     "leite condensado": { 
         "restricao": "leite", 
-        "mensagem": "Contém leite condensado, incompatível com restrição à lactose" 
+        "mensagem": "Contém leite condensado, incompatível com restrição à leite" 
     }, 
     "leite evaporado": { 
         "restricao": "leite", 
-        "mensagem": "Contém leite evaporado, incompatível com restrição à lactose" 
+        "mensagem": "Contém leite evaporado, incompatível com restrição à leite" 
     }, 
     "lactoalbumina": { 
         "restricao": "leite", 
@@ -289,15 +289,15 @@ regras = {
     }, 
     "lactulose": { 
         "restricao": "leite", 
-        "mensagem": "Contém lactulose, incompatível com restrição à lactose" 
+        "mensagem": "Contém lactulose, incompatível com restrição à leite" 
     }, 
     "lactulona": { 
         "restricao": "leite", 
-        "mensagem": "Contém lactulona, incompatível com restrição à lactose" 
+        "mensagem": "Contém lactulona, incompatível com restrição à leite" 
     }, 
     "lactose": { 
         "restricao": "leite", 
-        "mensagem": "Contém lactose, incompatível com restrição à lactose" 
+        "mensagem": "Contém lactose, incompatível com restrição à leite" 
     }, 
     "caseina": { 
         "restricao": "leite", 
@@ -357,7 +357,7 @@ regras = {
     }, 
     "creme de leite": { 
         "restricao": "leite", 
-        "mensagem": "Contém creme de leite, incompatível com restrição à lactose" 
+        "mensagem": "Contém creme de leite, incompatível com restrição à leite" 
     }, 
     "nata": { 
         "restricao": "leite", 
@@ -453,7 +453,7 @@ regras = {
     }, 
     "doce de leite": { 
         "restricao": "leite", 
-        "mensagem": "Contém doce de leite, incompatível com restrição à lactose" 
+        "mensagem": "Contém doce de leite, incompatível com restrição à leite" 
     }, 
     "petit suisse": { 
         "restricao": "leite", 
