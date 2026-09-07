@@ -30,7 +30,7 @@ Responda de forma curta, clara e fácil de entender.
 """
 
     resposta = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-2.5-flash-lite",
         contents=prompt
     )
 

@@ -239,13 +239,15 @@ def extrair_dados_rotulo(
     )
 
 
-    texto_minusculo = texto.lower()
+    texto_normalizado = normalizar(texto)
 
 
     ingredientes = ""
 
     advertencias = ""
 
+
+    print(texto_normalizado)
 
     # ==========================
     # EXTRAIR INGREDIENTES
@@ -254,26 +256,29 @@ def extrair_dados_rotulo(
     inicio_ingredientes = -1
 
 
-    if "ingredientes:" in texto_minusculo:
+    if "ingredientes:" in texto_normalizado:
 
         inicio_ingredientes = (
-            texto_minusculo.find(
+            texto_normalizado.find(
                 "ingredientes:"
             )
             +
             len("ingredientes:")
         )
 
+        
 
-    elif "ingr.:" in texto_minusculo:
+    elif "ingr.:" in texto_normalizado:
 
         inicio_ingredientes = (
-            texto_minusculo.find(
+            texto_normalizado.find(
                 "ingr.:"
             )
             +
             len("ingr.:")
         )
+
+    print(inicio_ingredientes)
 
 
     # Se encontrou ingredientes
@@ -288,138 +293,76 @@ def extrair_dados_rotulo(
         # DEPOIS dos ingredientes
         palavras_fim_ingredientes = [
 
-            "alérgicos:",
-            "alergicos:",
+            "nao contem",
 
-            "alérgico:",
-            "alergico:",
-            
-            # tirar o "glúten"
-
-            "contém", 
             "contem",
 
-            "não contém glúten",
-            "nao contem gluten",
+
+            "alergicos:",
 
             "pode conter",
 
-            "informação nutricional",
             "informacao nutricional"
         ]
 
+        posicaoOficial = 0
 
         for palavra in palavras_fim_ingredientes:
+
+            if palavra == "nao contem":
 
             # IMPORTANTE:
             # procura SOMENTE depois
             # do início dos ingredientes
-            posicao = (
-                texto_minusculo.find(
-                    palavra,
-                    inicio_ingredientes
+                posicaoOficial = (
+                    texto_normalizado.find(
+                        palavra,
+                        inicio_ingredientes
+                    )
                 )
-            )
-
-
-            if (
-                posicao != -1
-                and
-                posicao < fim_ingredientes
-            ):
-
-                fim_ingredientes = (
-                    posicao
+                print(posicaoOficial)
+            else:
+                posicaoProv = (
+                    texto_normalizado.find(
+                        palavra, 
+                        inicio_ingredientes
+                    )
                 )
 
+                print(posicaoProv)
 
-        ingredientes = texto[
-            inicio_ingredientes:
-            fim_ingredientes
-        ].strip()
+                if ((posicaoProv < posicaoOficial) and (posicaoProv != -1)) or (posicaoOficial == -1):
+                    posicaoOficial = posicaoProv
+
+    
+
+        print(posicaoOficial)
+
+        if ( posicaoOficial != -1 and posicaoOficial < fim_ingredientes):
+            
+            fim_ingredientes = (posicaoOficial)
+
+
+            ingredientes = texto[
+                inicio_ingredientes:
+                fim_ingredientes
+            ].strip()
+    else:
+        raise HTTPException(
+                    status_code=400,
+                    detail=(
+                        "Nenhum texto encontrado como inicio da lista de ingredientes."
+                    )
+                )
 
 
     # ==========================
     # EXTRAIR ADVERTÊNCIAS
     # ==========================
 
-    inicio_advertencias = -1
-
-
     # Primeiro tenta localizar
     # ALÉRGICOS:
-    if "alérgicos:" in texto_minusculo:
-
-        inicio_advertencias = (
-            texto_minusculo.find(
-                "alérgicos:"
-            ) + len("alérgicos:")
-        )
-
-
-    elif "alergicos:" in texto_minusculo:
-
-        inicio_advertencias = (
-            texto_minusculo.find(
-                "alergicos:"
-            ) + len("alergicos:")
-        )
-
-
-    elif "alérgico:" in texto_minusculo:
-
-        inicio_advertencias = (
-            texto_minusculo.find(
-                "alérgico:"
-            ) + len("alérgico:")
-        )
-
-
-    elif "alergico:" in texto_minusculo:
-
-        inicio_advertencias = (
-            texto_minusculo.find(
-                "alergico:"
-            ) + len("alergico:")
-        )
-
-
-    # Caso não exista ALÉRGICOS:
-    # procura outros marcadores
-    else:
-
-        marcadores_advertencias = [
-
-            "contém glúten",
-            "contem gluten",
-
-            "não contém glúten",
-            "nao contem gluten",
-
-            "pode conter"
-        ]
-
-
-        for marcador in marcadores_advertencias:
-
-            posicao = (
-                texto_minusculo.find(
-                    marcador
-                ) + len(marcador)
-            )
-
-
-            if posicao != -1:
-
-                if (
-                    inicio_advertencias == -1
-                    or
-                    posicao < inicio_advertencias
-                ):
-
-                    inicio_advertencias = (
-                        posicao
-                    )
+    inicio_advertencias = fim_ingredientes
 
 
     # ==========================
@@ -435,41 +378,48 @@ def extrair_dados_rotulo(
 
         palavras_fim_advertencias = [
 
-            "informação nutricional",
             "informacao nutricional",
 
-            "porção",
             "porcao",
 
-            "valor energético",
             "valor energetico",
 
             "modo de conservação"
         ]
 
 
-        for palavra in palavras_fim_advertencias:
 
             # IMPORTANTE:
             # procura somente DEPOIS
             # do início das advertências
-            posicao = (
-                texto_minusculo.find(
+        posicaoOficial = 0
+            
+        for palavra in palavras_fim_advertencias:
+            
+            if palavra == "informacao nutricional":
+            
+                # IMPORTANTE:
+                # procura SOMENTE depois             
+                posicaoOficial = texto_normalizado.find(
                     palavra,
-                    inicio_advertencias
+                    inicio_ingredientes
+                    )
+                
+            else:
+                posicaoProv = (
+                texto_normalizado.find(
+                palavra, 
+                inicio_ingredientes
                 )
-            )
-
-
-            if (
-                posicao != -1
-                and
-                posicao < fim_advertencias
-            ):
-
-                fim_advertencias = (
-                    posicao
                 )
+            
+                if ((posicaoProv < posicaoOficial) and (posicaoProv == -1)) or (posicaoOficial == -1):
+                    posicaoOficial = posicaoProv
+
+        if ( posicaoOficial != -1 and posicaoOficial < fim_advertencias):
+                    
+                    fim_advertencias = (posicaoOficial)
+            
 
 
         advertencias = texto[
@@ -508,17 +458,20 @@ def executar_analise(
     # ==========================
 
     lista_ingredientes = [ 
-        normalizar(i) for i in re.split(r"\s*,\s* | \s*;\s* | \s*\.\s* | \s+e\s+ | \s*:\s*", ingredientes)
+        normalizar(i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s+e\s+|\s*:\s*", ingredientes)
     ]
 
+    print(lista_ingredientes)
 
     # ==========================
     # PREPARAR ADVERTÊNCIAS
     # ==========================
 
     lista_advertencias = [
-        normalizar (i) for i in re.split(r"\s*,\s* | \s*;\s* | \s*\.\s* | \s+e\s+ | \s*:\s*", advertencias)
+        normalizar (i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s+e\s+|\s*:\s*", advertencias)
     ]
+
+    print(lista_advertencias)
 
     # ==========================
     # PREPARAR RESTRIÇÕES
@@ -575,17 +528,11 @@ def executar_analise(
 
     for ingrediente, dados_regra in regras.items():
 
-        ingrediente_normalizado = (
-            normalizar(
-                ingrediente
-            )
-        )
-
 
         # Procura o ingrediente
         # dentro das advertências
         if (
-            ingrediente_normalizado
+            ingrediente
             in
             lista_advertencias
         ):
@@ -669,7 +616,7 @@ def executar_analise(
         }
 
 
-    return analisar_com_ia(resposta)
+    return resposta
 
 
 # ==========================
