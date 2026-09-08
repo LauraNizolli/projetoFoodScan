@@ -633,6 +633,10 @@ regras = {
         "restricao": "gluten",
         "mensagem": "Contém farinha de trigo enriquecida, incompatível com restrição ao glúten"
     },
+    "farinha de trigo enriquecida com ferro": {
+        "restricao": "gluten",
+        "mensagem": "Contém farinha de trigo enriquecida, incompatível com restrição ao glúten"
+    },
     "flocos de trigo": {
         "restricao": "gluten",
         "mensagem": "Contém flocos de trigo, incompatível com restrição ao glúten"
