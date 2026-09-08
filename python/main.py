@@ -616,7 +616,7 @@ def executar_analise(
         }
 
 
-    return resposta
+    return analisar_com_ia(resposta)
 
 
 # ==========================
