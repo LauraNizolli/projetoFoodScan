@@ -458,7 +458,7 @@ def executar_analise(
     # ==========================
 
     lista_ingredientes = [ 
-        normalizar(i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s+e\s+|\s*:\s*", ingredientes)
+        normalizar(i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s+e\s+|\s+E\s+|\s*:\s*|\s*(\s*|\s*)\s*", ingredientes)
     ]
 
     print(lista_ingredientes)
@@ -468,7 +468,7 @@ def executar_analise(
     # ==========================
 
     lista_advertencias = [
-        normalizar (i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s+E\s+|\s*:\s*", advertencias)
+        normalizar (i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s+e\s+|\s+E\s+|\s*:\s*|\s*(\s*|\s*)\s*", advertencias)
     ]
 
     print(lista_advertencias)

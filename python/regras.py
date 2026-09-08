@@ -1459,6 +1459,14 @@ regras = {
         "restricao": "oleaginosas",
         "mensagem": "Contém Castanea spp., nome científico associado a castanhas"
     },
+    "castanha de baru": {
+        "restricao": "oleaginosas",
+        "mensagem": "Contém castanha de baru, incompatível com restrição ou alergia a oleaginosas"
+    },
+    "castanha-de-baru": {
+        "restricao": "oleaginosas",
+        "mensagem": "Contém castanha de baru, incompatível com restrição ou alergia a oleaginosas"
+    },
 
     # =========================
     # LÁTEX NATURAL
@@ -1712,7 +1720,15 @@ regras = {
         "restricao": "oleaginosas",
         "mensagem": "O rótulo informa: pode conter castanha-de-caju"
     },
+    "pode conter castanha-de-caju": {
+        "restricao": "oleaginosas",
+        "mensagem": "O rótulo informa: pode conter castanha-de-caju"
+    },
     "pode conter castanha do para": {
+        "restricao": "oleaginosas",
+        "mensagem": "O rótulo informa: pode conter castanha-do-pará"
+    },
+    "pode conter castanha-do-para": {
         "restricao": "oleaginosas",
         "mensagem": "O rótulo informa: pode conter castanha-do-pará"
     },
@@ -1728,7 +1744,7 @@ regras = {
     # FIBRAS
     # =========================
     "fibra de trigo": {
-        "restricao": "glúten",
+        "restricao": "gluten",
         "mensagem": "Contém fibra de trigo; é incompatível com restrição ao glúten"
     },
     "fibra de soja": {
@@ -1736,7 +1752,7 @@ regras = {
             "mensagem": "Contém fibra de soja; é incompatível com restrição à soja"
         },
     "fibra de aveia": {
-            "restricao": "glúten",
+            "restricao": "gluten",
             "mensagem": "Contém fibra de aveia; pode ser incompatível com restrição ao glúten"
         }
 }
