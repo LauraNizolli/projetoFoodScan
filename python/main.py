@@ -256,14 +256,14 @@ def extrair_dados_rotulo(
     inicio_ingredientes = -1
 
 
-    if "ingredientes:" in texto_normalizado:
+    if "ingredientes" in texto_normalizado:
 
         inicio_ingredientes = (
             texto_normalizado.find(
-                "ingredientes:"
+                "ingredientes"
             )
             +
-            len("ingredientes:")
+            len("ingredientes")
         )
 
         
