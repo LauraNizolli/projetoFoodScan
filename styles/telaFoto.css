@@ -134,6 +134,8 @@ body{
         display: none;
         border-radius: 2rem;
         object-fit: contain;
+        max-width: 90%;
+        max-height: 50%;
     }
 
     main .tres {

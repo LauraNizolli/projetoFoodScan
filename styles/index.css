@@ -84,4 +84,13 @@ body{
         width: 50%;
         color: white;
     }
+
+    main .dois label input[type="checkbox"]{
+    flex-shrink: 0;
+    }
+
+    main .dois label p{
+        flex: 1;
+        text-align: left;
+    }
 }
