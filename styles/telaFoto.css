@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0rem;
+    padding: 0rem;
+    font-family: 'Nunito';
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+@media screen and (max-width: 1000px)  {
+    header{
+        display: flex;   
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #FFE598 ;
+        height: 10vh;
+        align-items: center;
+    }
+    header img{
+        height: 3rem;
+        width: 3rem;
+    }
+    header h1 {
+        display: flex;
+        align-items: center;
+    }
+    main{
+        background-color: #FFF9E9;
+    }
+    main .um{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem;
+    }
+
+    main .um h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:#4E7B3D;
+        border-radius: 1rem;
+        padding: 2rem;
+        width: 75%;
+        color: white;
+    }
+    main .um div{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    main .um div div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFE598;
+        width: 10rem;
+        height: 4rem;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+    }
+
+    main .um button{
+        display: flex;
+        justify-content: center;
+        background-color: #DD5921;
+        color: white;
+        border-radius: 1rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-style: none;
+        font-size: 1rem;
+    }
+
+    main .dois{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem;
+    }
+
+    main .dois h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #4E7B3D;
+        padding: 1rem 2rem 1rem 2rem;
+        border-radius: 1rem;
+        color: white;
+        width: 75%;
+    }
+}

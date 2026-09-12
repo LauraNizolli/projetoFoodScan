@@ -7,29 +7,34 @@
     font-family: 'Nunito';
 }
 
+body{
+    height: 100vh;
+}
+
 @media screen and (max-width: 1000px)  {
     header{
         display: flex;   
         gap: 1rem;
         padding: 1rem;
         background-color: #FFE598 ;
+        height: 10vh;
+        align-items: center;
     }
     header img{
+        height: 3rem;
         width: 3rem;
     }
     header h1 {
         display: flex;
         align-items: center;
     }
-    body{
-        background-color: #FFF9E9;
-
-    }
     
     main{
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        height: 90vh;
+        background-color: #FFF9E9;
     }
 
     main .um {
