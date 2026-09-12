@@ -135,4 +135,19 @@ body{
         border-radius: 2rem;
         object-fit: contain;
     }
+
+    main .tres {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    main .tres button {
+        background-color: #4E7B3D;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        border-style: none;
+        color: white;
+        font-size: 0.9rem;
+    }
 }
