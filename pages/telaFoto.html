@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de análise da foto</title>
     <link rel="stylesheet" href="../styles/telaFoto.css">
+    <script src="../scripts/telaFoto.js"></script>
 </head>
 <body>
     <header>
@@ -22,7 +23,9 @@
         </section>
         <section class="dois">
             <h2>Análise</h2>
-            <input type="file" accept="image/*" capture="environment">
+            <label for="imagem">Selecione uma imagem:</label>
+            <input type="file" id="imagem" accept="image/*">
+            <img id="preview" alt="imagem selecionada">
         </section>
         <section class="tres">
             <button>Digitar lista (em desenvolvimento)</button>

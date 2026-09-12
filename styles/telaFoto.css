@@ -96,4 +96,43 @@ body{
         color: white;
         width: 75%;
     }
+    main .dois label{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 75%;
+        background-color: #FFE598;
+        padding: 1rem;
+        border-radius: 1rem;
+        align-items: center;
+    }
+    main .dois input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        background-color: none;
+        border-style: solid;
+        border-color: #DD5921;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    main .dois #imagem::file-selector-button {
+        border: none;
+        background-color: #DD5921;
+        border-radius: 0.3rem;
+        padding: 0.3rem;
+        color: white;
+    }
+
+    main .dois #imagem::file-selector-button:hover {
+        background-color: #8e3914 ;
+    }
+
+    main .dois #preview{
+        display: none;
+        border-radius: 2rem;
+        object-fit: contain;
+    }
 }
