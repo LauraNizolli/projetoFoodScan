@@ -29,7 +29,10 @@ body{
         align-items: center;
     }
     main{
+        display: flex;
+        flex-direction: column;
         background-color: #FFF9E9;
+        padding: 1rem;
     }
     main .um{
         display: flex;
@@ -37,7 +40,6 @@ body{
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        margin: 1rem;
     }
 
     main .um h2{
@@ -133,9 +135,10 @@ body{
     main .dois #preview{
         display: none;
         border-radius: 2rem;
-        object-fit: contain;
         max-width: 90%;
-        max-height: 50%;
+        max-height: 80%;
+        object-fit: contain;
+        box-sizing: border-box;
     }
 
     main .tres {
@@ -144,7 +147,7 @@ body{
         gap: 1rem;
     }
 
-    main .tres button {
+    main .tres a {
         background-color: #4E7B3D;
         border-radius: 0.5rem;
         padding: 0.5rem;
