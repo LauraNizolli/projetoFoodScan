@@ -57,14 +57,48 @@ body{
         gap: 1rem;
     }
     main .dois label{
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        width: 7rem;
+        display: grid;
+        grid-template-columns: 1.2rem 1fr;
+        column-gap: 1rem;
+        width: 8rem;
         background-color: #FFE598;
         padding: 1rem;
         border-radius: 1rem;
         align-items: center;
+    }
+    
+    main .dois label input[type="checkbox"]{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        appearance: none;
+        width: 1.2rem;
+        height: 1.2rem;
+        min-width: 1.2rem;
+        min-height: 1.2rem;
+        flex-shrink: 0;
+        border: 2px solid #DD5921;
+        border-radius: 0.2rem;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    main .dois label input[type="checkbox"]:checked {
+        background-color: #DD5921;
+    }
+
+    main .dois label input[type="checkbox"]:checked:after {
+        content: "✓";
+        color: white;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .dois label p{
+        flex: 1;
+        text-align: left;
     }
 
     main .tres{
@@ -85,12 +119,7 @@ body{
         color: white;
     }
 
-    main .dois label input[type="checkbox"]{
-    flex-shrink: 0;
-    }
+    
 
-    main .dois label p{
-        flex: 1;
-        text-align: left;
-    }
+
 }
