@@ -42,6 +42,7 @@ main {
         justify-content: flex-start;
         gap: 6rem;
     }
+
     main .um{
         display: flex;
         flex-direction: column;
@@ -61,11 +62,14 @@ main {
         width: 85%;
         color: white;
     }
-    main .um div{
-        display: flex;
-        justify-content: center;
+
+    main .um #restricoesSelecionadas{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
         gap: 1rem;
     }
+
     main .um div div{
         display: flex;
         justify-content: center;
@@ -75,6 +79,7 @@ main {
         height: 4rem;
         border-radius: 1rem;
         font-size: 1.5rem;
+        padding: 0.5rem;
     }
 
     main .um a{
