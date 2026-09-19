@@ -5,7 +5,7 @@ from fastapi import (
     Form
 )
 
-from python.executar_ocr import executar_ocr
+from executar_ocr import executar_ocr
 from extrairImg import extrair_dados_rotulo
 from executar_analise import executar_analise
 
