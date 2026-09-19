@@ -8,11 +8,19 @@ from fastapi import (
 from executar_ocr import executar_ocr
 from extrairImg import extrair_dados_rotulo
 from executar_analise import executar_analise
+from fastapi.middleware.cors import CORSMiddleware
 
 
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 # ==========================
 # HOME

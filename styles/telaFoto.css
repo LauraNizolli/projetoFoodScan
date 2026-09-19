@@ -157,13 +157,15 @@ main {
         gap: 1rem;
     }
 
-    main .tres a {
+    main .tres button {
         background-color: #4E7B3D;
         border-radius: 0.5rem;
         padding: 0.5rem;
         border-style: none;
         color: white;
         font-size: 0.9rem;
+        width: 10rem;
+        height: 3rem;
     }
 
 }
