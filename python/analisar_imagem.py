@@ -1,61 +1,10 @@
-from fastapi import (
-    FastAPI,
-    UploadFile,
-    File,
-    Form
-)
-
-from python.executar_ocr import executar_ocr
-from extrairImg import extrair_dados_rotulo
+from fastapi import UploadFile, File, Form
+from executar_ocr import executar_ocr
 from executar_analise import executar_analise
+from extrairImg import extrair_dados_rotulo
 
 
 
-app = FastAPI()
-
-
-# ==========================
-# HOME
-# ==========================
-
-@app.get("/")
-def home():
-
-    return {
-        "Mensagem":
-            "FoodScan funcionando!"
-    }
-
-
-# ==========================
-# ANÁLISE POR TEXTO
-# ==========================
-
-@app.post("/analisar")
-def analisar(
-    nome_produto: str = Form(...),
-    ingredientes: str = Form(...),
-    advertencias: str = Form(...),
-    restricoes: str = Form(...)
-):
-
-    return executar_analise(
-
-        nome_produto,
-
-        ingredientes,
-
-        advertencias,,0
-
-        restricoes
-    )
-
-
-# ==========================
-# ANÁLISE POR IMAGEM
-# ==========================
-
-@app.post("/analisar-imagem")
 async def analisar_imagem(
 
     imagem: UploadFile = File(...),
@@ -144,6 +93,3 @@ async def analisar_imagem(
         "analise":
             analise
     }
-    # ==========================
-    # Terminamosss (????)
-    # ==========================

@@ -35,3 +35,14 @@ Responda de forma curta, clara e fácil de entender.
     )
 
     return resposta.text
+
+def analisar_com_ia(resposta: dict):
+
+    resposta_ia = verificar_com_ia(
+        resposta
+    )
+
+    return {
+        "analise_regras": resposta,
+        "analise_ia": resposta_ia
+    }

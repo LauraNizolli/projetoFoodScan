@@ -21,12 +21,14 @@ listaRestricoes.forEach(function(listaRestricoes){
 })
 
 analisarImagem.addEventListener("click", function(){
+    let imagemSelecionada = imagem
+
     localStorage.setItem(
         "imagem", 
-        JSON.stringify(analis)
+        JSON.stringify(imagemSelecionada)
     )
 
-    console.log(listaRestricoes)
+    console.log("funcionou")
 })
 
 
