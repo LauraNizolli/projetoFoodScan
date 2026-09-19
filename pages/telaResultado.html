@@ -1,15 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de resultado da análise</title>
+
+    <title>Resultado da análise</title>
+
+    <link rel="stylesheet" href="../styles/telaResultado.css">
+    <script src="../scripts/telaResultado.js" defer></script>
 </head>
+
 <body>
     <header>
-        <h1>Resultados da análise</h1>
+        <img src="../images/user.png" alt="">
+        <h1>Usuário</h1>
     </header>
+
     <main>
+        <section class="um">
+            <div>
+                <h2>Análise concluída!</h2>
+                <p>Confira abaixo o resultado do FoodScan:</p>
+            </div> 
+        </section>
+        
+        <section class="dois">
+            <div class="respostaIA">
+                <p id="respostaIA"></p>
+            </div>
+        </section>
+
+        <section class="quatro">
+            <p><b>Atenção:</b> este resultado possui caráter informativo e <b>não</b> substitui
+        <b>orientação médica</b> ou <b>nutricional</b>. Em caso de alergia grave,
+        dúvida sobre os ingredientes ou informações incompletas no
+        rótulo, <b>não</b> consuma o produto e consulte um <b>profissional de saúde</b>.</p>
+        </section>
+
+        <section class="tres">
+            <a href="./telaFoto.html" class="novaAnalise">
+                Analisar outro produto
+            </a>
+        </section>
+
         
     </main>
 </body>

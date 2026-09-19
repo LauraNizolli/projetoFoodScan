@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 *{
     margin: 0rem;
@@ -16,6 +21,67 @@ body{
 main {
     flex: 1;
 }
+
+.carregamento {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 1000;
+}
+
+.carregamento.oculto {
+    display: none;
+}
+
+.caixaCarregamento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+
+    width: 75%;
+    max-width: 20rem;
+
+    padding: 2rem;
+
+    border-radius: 1rem;
+
+    background-color: #FFF9E9;
+
+    text-align: center;
+}
+
+.caixaCarregamento p {
+    color: #4E7B3D;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.caixaCarregamento span {
+    color: #333333;
+}
+
+
+.circuloCarregamento {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border: 0.4rem solid #FFE598;
+    border-top-color: #DD5921;
+    border-radius: 50%;
+
+    animation: girar 1s linear infinite;
+}
+
+
 
 @media screen and (max-width: 1000px)  {
     header{
@@ -166,6 +232,10 @@ main {
         font-size: 0.9rem;
         width: 10rem;
         height: 3rem;
+    }
+
+    main .tres button:hover {
+        cursor: pointer;
     }
 
 }

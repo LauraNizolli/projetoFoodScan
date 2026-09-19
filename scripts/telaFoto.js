@@ -9,6 +9,7 @@ const uploadImagem = document.getElementById("imagem")
 const preview = document.getElementById("preview")
 const restricoesSelecionadas = document.getElementById("restricoesSelecionadas")
 const analisar = document.getElementById("analisar")
+const carregamento = document.getElementById("carregamento")
 
 listaRestricoes.forEach(function(listaRestricoes){
 
@@ -38,32 +39,71 @@ uploadImagem.addEventListener("change", function() {
 
 
 analisar.addEventListener("click", async function() {
+
     const nomeProduto = document.getElementById("nomeProduto").value
     const imagem = uploadImagem.files[0]
+
+    if (nomeProduto.trim() === "") {
+        alert("Digite o nome do produto.")
+        return
+    }
+
+    if (!imagem) {
+        alert("Selecione uma imagem.")
+        return
+    }
+
+    if (listaRestricoes.length === 0) {
+        alert("Selecione pelo menos uma restrição alimentar.")
+        return
+    }
+
     const dados = new FormData()
 
     dados.append("imagem", imagem)
     dados.append("nome_produto", nomeProduto)
     dados.append("restricoes", listaRestricoes.join(","))
 
-    console.log("NOME:", nomeProduto);
-    console.log("IMAGEM:", imagem);
-    console.log("RESTRIÇÕES:", listaRestricoes);
-    console.log("FORMDATA:");
+    carregamento.classList.remove("oculto")
+    analisar.disabled = true
 
-    for (const [chave, valor] of dados.entries()) {
-        console.log(chave, valor);
+    try {
+
+        const resposta = await fetch(
+            "http://127.0.0.1:8000/analisar-imagem",
+            {
+                method: "POST",
+                body: dados
+            }
+        )
+
+        const resultado = await resposta.json()
+
+        if (!resposta.ok) {
+            throw new Error(
+                resultado.detail ||
+                "Não foi possível analisar a imagem."
+            )
+        }
+
+        const respostaIA = resultado.analise.analise_ia
+
+        console.log("Texto da IA:", respostaIA)
+
+        sessionStorage.setItem(
+            "respostaIA",
+            respostaIA
+        )
+
+        window.location.href = "./telaResultado.html"
+
+    } catch (erro) {
+
+        carregamento.classList.add("oculto")
+        analisar.disabled = false
+
+        alert(erro.message)
     }
-
-
-    const resposta = await fetch("http://127.0.0.1:8000/analisar-imagem", {
-        method: "POST",
-        body: dados
-    })
-
-    const resultado = await resposta.json()
-    
-    console.log(resultado)
 
 })
 
