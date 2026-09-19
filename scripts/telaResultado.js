@@ -1,12 +1,14 @@
 const resultado = document.getElementById("respostaIA")
 const respostaIA = sessionStorage.getItem("respostaIA")
-
+const nomeProduto = sessionStorage.getItem("nomeProduto")
+const tituloNome = document.getElementById("nomeProduto")
 console.log(resultado)
 console.log(respostaIA)
 
-if (respostaIA) {
+if (respostaIA && nomeProduto)  {
 
     resultado.textContent = respostaIA
+    tituloNome.textContent = nomeProduto
 
 } else {
 

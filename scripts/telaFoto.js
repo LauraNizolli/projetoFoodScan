@@ -90,10 +90,8 @@ analisar.addEventListener("click", async function() {
 
         console.log("Texto da IA:", respostaIA)
 
-        sessionStorage.setItem(
-            "respostaIA",
-            respostaIA
-        )
+        sessionStorage.setItem("respostaIA", respostaIA)
+        sessionStorage.setItem("nomeProduto", nomeProduto)
 
         window.location.href = "./telaResultado.html"
 

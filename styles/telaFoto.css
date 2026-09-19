@@ -106,7 +106,7 @@ main {
         background-color: #FFF9E9;
         padding: 1rem;
         justify-content: flex-start;
-        gap: 6rem;
+        gap: 3rem;
     }
 
     main .um{
@@ -123,9 +123,8 @@ main {
         justify-content: center;
         align-items: center;
         background-color:#4E7B3D;
-        border-radius: 1rem;
         padding: 1rem 2rem 1rem 2rem;
-        width: 85%;
+        width: 100%;
         color: white;
     }
 
@@ -152,11 +151,13 @@ main {
         display: flex;
         justify-content: center;
         background-color: #DD5921;
+        text-decoration: none;
         color: white;
         border-radius: 1rem;
+        border-style: solid;
+        border-color: #a24219;
         padding: 0.5rem 1rem 0.5rem 1rem;
-        border-style: none;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     main .dois{
@@ -174,9 +175,8 @@ main {
         align-items: center;
         background-color: #4E7B3D;
         padding: 1rem 2rem 1rem 2rem;
-        border-radius: 1rem;
         color: white;
-        width: 90%;
+        width: 100%;
     }
     main .dois label{
         display: flex;
@@ -195,12 +195,13 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 75%;
+        width: 90%;
         background-color: none;
         border-style: solid;
         border-color: #DD5921;
         padding: 1rem;
         border-radius: 1rem;
+        font-size: 1.2rem;
     }
 
     main .dois #imagem {
@@ -211,6 +212,8 @@ main {
     main .dois #preview{
         display: none;
         border-radius: 2rem;
+        border-style: solid;
+        border-color: black;
         max-width: 90%;
         max-height: 80%;
         object-fit: contain;
@@ -224,14 +227,17 @@ main {
     }
 
     main .tres button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: #4E7B3D;
         border-radius: 0.5rem;
-        padding: 0.5rem;
-        border-style: none;
+        border-style: solid;
+        border-color:#314f27;
+        padding: 1rem;
         color: white;
-        font-size: 0.9rem;
-        width: 10rem;
-        height: 3rem;
+        font-size: 1.5rem;
+        width:55%;
     }
 
     main .tres button:hover {

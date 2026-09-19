@@ -17,7 +17,7 @@ body{
         gap: 1rem;
         padding: 1rem;
         background-color: #FFE598 ;
-        height: 10vh;
+        height: 10dvh;
         align-items: center;
     }
     header img{
@@ -32,8 +32,9 @@ body{
     main{
         display: flex;
         flex-direction: column;
-        gap: 3rem;
-        height: 90vh;
+        justify-content: flex-start;
+        gap: 13%;
+        height: 90dvh;
         background-color: #FFF9E9;
     }
 
