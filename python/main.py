@@ -45,7 +45,7 @@ def analisar(
 
         ingredientes,
 
-        advertencias,,0
+        advertencias,
 
         restricoes
     )

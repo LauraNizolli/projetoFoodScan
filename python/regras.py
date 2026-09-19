@@ -1500,6 +1500,10 @@ regras = {
         "restricao": "gluten",
         "mensagem": "O rótulo informa: contém trigo, incompatível com restrição ao glúten"
     },
+    "contem derivados de trigo": {
+        "restricao": "gluten",
+        "mensagem": "O rótulo informa: contém derivados de trigo, incompatível com restrição ao glúten"
+    },
     "contem centeio": {
         "restricao": "gluten",
         "mensagem": "O rótulo informa: contém centeio, incompatível com restrição ao glúten"
