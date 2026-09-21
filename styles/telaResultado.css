@@ -11,7 +11,11 @@ body{
     background-color: #FFF9E9;
 }
 
-@media screen and (max-width: 1000px)  {
+
+
+
+
+@media (max-width: 767px)  {
     header{
         display: flex;   
         gap: 1rem;
@@ -46,7 +50,7 @@ body{
 
     main .um div h2 {
         display: flex;
-        justify-content: center;
+        justify-conte@nt: center;
         color: white;
         font-size: 2rem;
     }
@@ -108,4 +112,106 @@ body{
         font-size: 1.2rem;
     }
         
+}
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 1040px)  {
+    header{
+        display: flex;   
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #FFE598 ;
+        height: 10vh;
+        align-items: center;
+    }
+    header img{
+        height: 3rem;
+        width: 3rem;
+    }
+    header h1 {
+        display: flex;
+        align-items: center;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #FFF9E9;
+        min-height: 80dvh;
+    }
+
+    main .um{
+        background-color: #4E7B3D;
+        min-width: 100%;
+        padding: 1rem;
+    }
+
+    main .um div h2 {
+        display: flex;
+        justify-conte@nt: center;
+        color: white;
+        font-size: 2rem;
+    }
+
+    main .um div p {
+        display:flex;
+        justify-content: center;
+        color: white;
+        font-size: 1.3rem;
+    }
+
+    main .dois .respostaIA strong{
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    main .dois .respostaIA p{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    main .dois .respostaIA #respostaIA {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: pre-line;
+        padding: 1rem;
+        border-left: 0.4rem solid #DD5921;
+        border-radius: 0.8rem;
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin: 0.5rem;
+        min-height: 40dvh;
+    }
+
+    main .tres{
+        margin: 1.5rem;
+    }
+
+    main .tres a {
+        background-color: #DD5921;
+        text-decoration: none;
+        padding: 1rem;
+        color: white;
+        font-size: 1.5rem;
+        border-radius: 1rem;
+        border-style: solid;
+        border-color: #8c3915;
+    }
+
+    main .quatro p{
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
 }
