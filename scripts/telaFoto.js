@@ -70,7 +70,7 @@ analisar.addEventListener("click", async function() {
     try {
 
         const resposta = await fetch(
-            "http://192.168.68.105:8000/analisar_imagem",
+            "http://192.168.68.105:8000/analisar-imagem",
             {
                 method: "POST",
                 body: dados
