@@ -83,7 +83,170 @@ main {
 
 
 
-@media screen and (max-width: 1000px)  {
+@media screen and (max-width: 767px)  {
+    header{
+        display: flex;   
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #FFE598 ;
+        height: 10vh;
+        align-items: center;
+    }
+    header img{
+        height: 3rem;
+        width: 3rem;
+    }
+    header h1 {
+        display: flex;
+        align-items: center;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        background-color: #FFF9E9;
+        padding: 1rem;
+        justify-content: flex-start;
+        gap: 3rem;
+    }
+
+    main .um{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+    }
+
+    main .um h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:#4E7B3D;
+        padding: 1rem 2rem 1rem 2rem;
+        width: 100%;
+        color: white;
+    }
+
+    main .um #restricoesSelecionadas{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        gap: 1rem;
+    }
+
+    main .um div div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFE598;
+        width: 10rem;
+        height: 4rem;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    main .um a{
+        display: flex;
+        justify-content: center;
+        background-color: #DD5921;
+        text-decoration: none;
+        color: white;
+        border-radius: 1rem;
+        border-style: solid;
+        border-color: #a24219;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        font-size: 1.5rem;
+    }
+
+    main .dois{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem;
+    }
+
+    main .dois h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #4E7B3D;
+        padding: 1rem 2rem 1rem 2rem;
+        color: white;
+        width: 100%;
+    }
+    main .dois label{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        background-color: #DD5921;
+        border-style: solid;
+        border-color: #a24219;
+        color: white;
+        font-size: 1.3rem;
+        padding: 1rem 2rem 1rem 2rem;
+        border-radius: 1rem;
+        align-items: center;
+    }
+    main .dois input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        background-color: none;
+        border-style: solid;
+        border-color: #DD5921;
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+    }
+
+    main .dois #imagem {
+        display: none;
+    }
+
+
+    main .dois #preview{
+        display: none;
+        border-radius: 2rem;
+        border-style: solid;
+        border-color: black;
+        max-width: 90%;
+        max-height: 80%;
+        object-fit: contain;
+        box-sizing: border-box;
+    }
+
+    main .tres {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    main .tres button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #4E7B3D;
+        border-radius: 0.5rem;
+        border-style: solid;
+        border-color:#314f27;
+        padding: 1rem;
+        color: white;
+        font-size: 1.5rem;
+        width:55%;
+    }
+
+    main .tres button:hover {
+        cursor: pointer;
+    }
+
+}
+
+@media (min-width: 767px) and (max-width: 1040px)  {
     header{
         display: flex;   
         gap: 1rem;
