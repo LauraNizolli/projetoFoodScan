@@ -35,7 +35,8 @@ Motivos: (Motivos que levaram a essa recomendação, descritos no tópico 2, de 
 
 lembre-se de utilizar letras maiúsculas em início de frases e minúsculas no restante.
 
-IMPORTANTE: se o rótulo disser explicitamente que aquele alimento não contém determinado ingrediente, não considere esse ingrediente como risco, mesmo que ele esteja listado no json.
+IMPORTANTE: se o rótulo disser explicitamente que aquele alimento não contém determinado ingrediente, não considere esse ingrediente como risco, mesmo que ele esteja listado na lista de motivos do json. Desconsidere esse ingrediente como risco mesmo que ele apareça como apresentando risco de contaminação cruzada. 
+Quando casos como esse ocorrerem, apenas mencione que o ingrediente está presente no alimento, mas que o rótulo explicitamente afirma que ele não está presente. Conte essa divergência para o usuário e diga que cabe a ele decidir se quer consumir ou não o alimento, mas que a recomendação da IA é de que o alimento é seguro para consumo.
 """
 
     resposta = client.models.generate_content(
