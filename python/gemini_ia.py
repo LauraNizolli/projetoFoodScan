@@ -34,10 +34,12 @@ A resposta gerada será exibida para o usuário final, então seja conciso e dir
 Motivos: (Motivos que levaram a essa recomendação, descritos no tópico 2, de forma resumida e objetiva)."
 
 lembre-se de utilizar letras maiúsculas em início de frases e minúsculas no restante.
+
+IMPORTANTE: se o rótulo disser explicitamente que aquele alimento não contém determinado ingrediente, não considere esse ingrediente como risco, mesmo que ele esteja listado no json.
 """
 
     resposta = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-2.5-flash-lite",
         contents=prompt
     )
 
