@@ -1,1766 +1,2158 @@
+
 regras = {
-        # =========================
-    # LEITE / LACTOSE
-    # =========================
     "leite": {
-        "restricao": "lactose",
-        "mensagem": "Contém leite, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém leite, incompatível com restrição a leite"
     },
     "leite integral": {
-        "restricao": "lactose",
-        "mensagem": "Contém leite integral, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém leite integral, incompatível com restrição a leite"
     },
     "leite semidesnatado": {
-        "restricao": "lactose",
-        "mensagem": "Contém leite semidesnatado, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém leite semidesnatado, incompatível com restrição a leite"
     },
     "leite desnatado": {
-        "restricao": "lactose",
-        "mensagem": "Contém leite desnatado, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém leite desnatado, incompatível com restrição a leite"
     },
     "leite em po": {
-        "restricao": "lactose",
-        "mensagem": "Contém leite em pó, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém leite em pó, incompatível com restrição a leite"
     },
     "leite condensado": {
-        "restricao": "lactose",
-        "mensagem": "Contém leite condensado, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém leite condensado, incompatível com restrição a leite"
     },
     "leite evaporado": {
-        "restricao": "lactose",
-        "mensagem": "Contém leite evaporado, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém leite evaporado, incompatível com restrição a leite"
     },
     "lactoalbumina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém lactoalbumina, derivado do leite"
     },
     "lactalbumina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém lactalbumina, derivado do leite"
     },
     "lactoglobulina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém lactoglobulina, derivado do leite"
     },
     "fosfato de lactoalbumina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém fosfato de lactoalbumina, derivado do leite"
     },
     "lactoferrina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém lactoferrina, derivado do leite"
     },
-    "lactulose": {
-        "restricao": "lactose",
-        "mensagem": "Contém lactulose, incompatível com restrição à lactose"
-    },
-    "lactulona": {
-        "restricao": "lactose",
-        "mensagem": "Contém lactulona, incompatível com restrição à lactose"
-    },
     "lactose": {
-        "restricao": "lactose",
-        "mensagem": "Contém lactose, incompatível com restrição à lactose"
+        "restricoes": [
+            "lactose",
+            "leite"
+        ],
+        "mensagem": "Contém lactose, açúcar derivado do leite"
     },
     "caseina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseína, proteína do leite"
     },
     "caseina de coalho": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseína de coalho, proteína do leite"
     },
     "caseina hidrolisada": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseína hidrolisada, derivado do leite"
     },
     "caseinato": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseinato, derivado do leite"
     },
     "caseinato de calcio": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseinato de cálcio, derivado do leite"
     },
     "caseinato de potassio": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseinato de potássio, derivado do leite"
     },
     "caseinato de amonia": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseinato de amônia, derivado do leite"
     },
     "caseinato de magnesio": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseinato de magnésio, derivado do leite"
     },
     "caseinato de sodio": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém caseinato de sódio, derivado do leite"
     },
     "leitelho": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém leitelho, derivado do leite"
     },
     "manteiga": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém manteiga, derivado do leite"
     },
     "gordura de manteiga": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém gordura de manteiga, derivado do leite"
     },
     "oleo de manteiga": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém óleo de manteiga, derivado do leite"
     },
     "ester de manteiga": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém éster de manteiga, derivado do leite"
     },
     "creme de leite": {
-        "restricao": "lactose",
-        "mensagem": "Contém creme de leite, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém creme de leite, incompatível com restrição a leite"
     },
     "nata": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém nata, derivado do leite"
     },
     "soro de leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém soro de leite, derivado do leite"
     },
     "soro de leite deslactosado": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém soro de leite deslactosado, derivado do leite"
     },
     "soro de leite desmineralizado": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém soro de leite desmineralizado, derivado do leite"
     },
     "gordura de leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém gordura de leite, derivado do leite"
     },
     "coalhada": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém coalhada, derivado do leite"
     },
     "proteina de leite hidrolisada": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém proteína de leite hidrolisada, derivado do leite"
     },
     "ghee": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém ghee, derivado do leite"
     },
     "hidrolisado de caseina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém hidrolisado de caseína, derivado do leite"
     },
     "hidrolisado de lactoalbumina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém hidrolisado de lactoalbumina, derivado do leite"
     },
     "hidrolisado de lactalbumina": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém hidrolisado de lactalbumina, derivado do leite"
     },
     "hidrolisado de proteina do leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém hidrolisado de proteína do leite"
     },
     "hidrolisado de proteina de soro de leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém hidrolisado de proteína de soro de leite"
     },
     "hidrolisado de iogurte": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém hidrolisado de iogurte, derivado do leite"
     },
     "iogurte": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém iogurte, derivado do leite"
     },
     "extrato de proteina de leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém extrato de proteína de leite"
     },
     "solidos de leite azedo": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém sólidos de leite azedo"
     },
     "fermento lacteo": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém fermento lácteo, derivado do leite"
     },
     "composto lacteo": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém composto lácteo"
     },
     "mistura lactea": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém mistura láctea"
     },
-    "diacetil": {
-        "restricao": "lactose",
-        "mensagem": "Pode conter derivado lácteo: diacetil"
-    },
     "gordura anidra de leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém gordura anidra de leite"
     },
     "proteina lactea": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém proteína láctea"
     },
     "doce de leite": {
-        "restricao": "lactose",
-        "mensagem": "Contém doce de leite, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Contém doce de leite, incompatível com restrição a leite"
     },
     "petit suisse": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "Contém petit suisse, derivado do leite"
     },
-    "nougat": {
-        "restricao": "lactose",
-        "mensagem": "Pode conter leite ou derivados: nougat"
-    },
     "proteina lactea do soro de leite microparticulada": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém proteína láctea do soro de leite microparticulada"
     },
     "cultura inicial de acido lactico fermentado em leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém cultura inicial de ácido láctico fermentado em leite"
     },
     "cultura inicial de acido lactico fermentado em soro de leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite"
+        ],
         "mensagem": "Contém cultura inicial de ácido láctico fermentado em soro de leite"
     },
-
-    "leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém leite, incompatível com restrição à leite" 
-    }, 
-    "leite integral": { 
-        "restricao": "leite", 
-        "mensagem": "Contém leite integral, incompatível com restrição à leite" 
-    }, 
-    "leite semidesnatado": { 
-        "restricao": "leite", 
-        "mensagem": "Contém leite semidesnatado, incompatível com restrição à leite" 
-    }, 
-    "leite desnatado": { 
-        "restricao": "leite", 
-        "mensagem": "Contém leite desnatado, incompatível com restrição à leite" 
-    }, 
-    "leite em po": { 
-        "restricao": "leite", 
-        "mensagem": "Contém leite em pó, incompatível com restrição à leite" 
-    }, 
-    "leite condensado": { 
-        "restricao": "leite", 
-        "mensagem": "Contém leite condensado, incompatível com restrição à leite" 
-    }, 
-    "leite evaporado": { 
-        "restricao": "leite", 
-        "mensagem": "Contém leite evaporado, incompatível com restrição à leite" 
-    }, 
-    "lactoalbumina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém lactoalbumina, derivado do leite" 
-    }, 
-    "lactalbumina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém lactalbumina, derivado do leite" 
-    }, 
-    "lactoglobulina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém lactoglobulina, derivado do leite" 
-    }, 
-    "fosfato de lactoalbumina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém fosfato de lactoalbumina, derivado do leite" 
-    }, 
-    "lactoferrina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém lactoferrina, derivado do leite" 
-    }, 
-    "lactulose": { 
-        "restricao": "leite", 
-        "mensagem": "Contém lactulose, incompatível com restrição à leite" 
-    }, 
-    "lactulona": { 
-        "restricao": "leite", 
-        "mensagem": "Contém lactulona, incompatível com restrição à leite" 
-    }, 
-    "lactose": { 
-        "restricao": "leite", 
-        "mensagem": "Contém lactose, incompatível com restrição à leite" 
-    }, 
-    "caseina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseína, proteína do leite" 
-    }, 
-    "caseina de coalho": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseína de coalho, proteína do leite" 
-    }, 
-    "caseina hidrolisada": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseína hidrolisada, derivado do leite" 
-    }, 
-    "caseinato": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseinato, derivado do leite" 
-    }, 
-    "caseinato de calcio": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseinato de cálcio, derivado do leite" 
-    }, 
-    "caseinato de potassio": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseinato de potássio, derivado do leite" 
-    }, 
-    "caseinato de amonia": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseinato de amônia, derivado do leite" 
-    }, 
-    "caseinato de magnesio": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseinato de magnésio, derivado do leite" 
-    }, 
-    "caseinato de sodio": { 
-        "restricao": "leite", 
-        "mensagem": "Contém caseinato de sódio, derivado do leite" 
-    }, 
-    "leitelho": { 
-        "restricao": "leite", 
-        "mensagem": "Contém leitelho, derivado do leite" 
-    }, 
-    "manteiga": { 
-        "restricao": "leite", 
-        "mensagem": "Contém manteiga, derivado do leite" 
-    }, 
-    "gordura de manteiga": { 
-        "restricao": "leite", 
-        "mensagem": "Contém gordura de manteiga, derivado do leite" 
-    }, 
-    "oleo de manteiga": { 
-        "restricao": "leite", 
-        "mensagem": "Contém óleo de manteiga, derivado do leite" 
-    }, 
-    "ester de manteiga": { 
-        "restricao": "leite", 
-        "mensagem": "Contém éster de manteiga, derivado do leite" 
-    }, 
-    "creme de leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém creme de leite, incompatível com restrição à leite" 
-    }, 
-    "nata": { 
-        "restricao": "leite", 
-        "mensagem": "Contém nata, derivado do leite" 
-    }, 
-    "soro de leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém soro de leite, derivado do leite" 
-    }, 
-    "soro de leite deslactosado": { 
-        "restricao": "leite", 
-        "mensagem": "Contém soro de leite deslactosado, derivado do leite" 
-    }, 
-    "soro de leite desmineralizado": { 
-        "restricao": "leite", 
-        "mensagem": "Contém soro de leite desmineralizado, derivado do leite" 
-    }, 
-    "gordura de leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém gordura de leite, derivado do leite" 
-    }, 
-    "coalhada": { 
-        "restricao": "leite", 
-        "mensagem": "Contém coalhada, derivado do leite" 
-    }, 
-    "proteina de leite hidrolisada": { 
-        "restricao": "leite", 
-        "mensagem": "Contém proteína de leite hidrolisada, derivado do leite" 
-    }, 
-    "ghee": { 
-        "restricao": "leite", 
-        "mensagem": "Contém ghee, derivado do leite" 
-    }, 
-    "hidrolisado de caseina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém hidrolisado de caseína, derivado do leite" 
-    }, 
-    "hidrolisado de lactoalbumina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém hidrolisado de lactoalbumina, derivado do leite" 
-    }, 
-    "hidrolisado de lactalbumina": { 
-        "restricao": "leite", 
-        "mensagem": "Contém hidrolisado de lactalbumina, derivado do leite" 
-    }, 
-    "hidrolisado de proteina do leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém hidrolisado de proteína do leite" 
-    }, 
-    "hidrolisado de proteina de soro de leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém hidrolisado de proteína de soro de leite" 
-    }, 
-    "hidrolisado de iogurte": { 
-        "restricao": "leite", 
-        "mensagem": "Contém hidrolisado de iogurte, derivado do leite" 
-    }, 
-    "iogurte": { 
-        "restricao": "leite", 
-        "mensagem": "Contém iogurte, derivado do leite" 
-    }, 
-    "extrato de proteina de leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém extrato de proteína de leite" 
-    }, 
-    "solidos de leite azedo": { 
-        "restricao": "leite", 
-        "mensagem": "Contém sólidos de leite azedo" 
-    }, 
-    "fermento lacteo": { 
-        "restricao": "leite", 
-        "mensagem": "Contém fermento lácteo, derivado do leite" 
-    }, 
-    "composto lacteo": { 
-        "restricao": "leite", 
-        "mensagem": "Contém composto lácteo" 
-    }, 
-    "mistura lactea": { 
-        "restricao": "leite", 
-        "mensagem": "Contém mistura láctea" 
-    }, 
-    "diacetil": { 
-        "restricao": "leite", 
-        "mensagem": "Pode conter derivado lácteo: diacetil" 
-    }, 
-    "gordura anidra de leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém gordura anidra de leite" 
-    }, 
-    "proteina lactea": { 
-        "restricao": "leite", 
-        "mensagem": "Contém proteína láctea" 
-    }, 
-    "doce de leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém doce de leite, incompatível com restrição à leite" 
-    }, 
-    "petit suisse": { 
-        "restricao": "leite", 
-        "mensagem": "Contém petit suisse, derivado do leite" 
-    }, 
-    "nougat": { 
-        "restricao": "leite", 
-        "mensagem": "Pode conter leite ou derivados: nougat" 
-    }, 
-    "proteina lactea do soro de leite microparticulada": { 
-        "restricao": "leite", 
-        "mensagem": "Contém proteína láctea do soro de leite microparticulada" 
-    }, 
-    "cultura inicial de acido lactico fermentado em leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém cultura inicial de ácido láctico fermentado em leite" 
-    }, 
-    "cultura inicial de acido lactico fermentado em soro de leite": { 
-        "restricao": "leite", 
-        "mensagem": "Contém cultura inicial de ácido láctico fermentado em soro de leite" 
-    },
-    # =========================
-    # OVO
-    # =========================
     "ovo": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo, incompatível com restrição ou alergia a ovos"
     },
     "ovos": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovos, incompatível com restrição ou alergia a ovos"
     },
     "ovo de galinha": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo de galinha"
     },
     "ovo de pata": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo de pata"
     },
     "ovo de gansa": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo de gansa"
     },
     "ovo de perua": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo de perua"
     },
     "ovo de codorna": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo de codorna"
     },
     "ovo cozido": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo cozido"
     },
     "ovo frito": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo frito"
     },
     "ovo poche": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovo pochê"
     },
     "omelete": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém omelete, preparado com ovo"
     },
     "ovoalbumina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovoalbumina, derivado do ovo"
     },
     "ovalbumina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovalbumina, derivado do ovo"
     },
     "albumina de ovo": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém albumina de ovo"
     },
     "ovotransferrina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovotransferrina, derivado do ovo"
     },
     "ovomucoide": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovomucoide, derivado do ovo"
     },
     "ovoglobulina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovoglobulina, derivado do ovo"
     },
-    "lisozima": {
-        "restricao": "ovos",
-        "mensagem": "Pode conter lisozima, derivada do ovo"
-    },
     "ovomucina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovomucina, derivado do ovo"
     },
     "avidina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém avidina, derivado do ovo"
     },
     "ovomacroglobulina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovomacroglobulina, derivado do ovo"
     },
     "ovoglicoproteina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovoglicoproteína, derivado do ovo"
     },
-    "flavoproteina": {
-        "restricao": "ovos",
-        "mensagem": "Contém flavoproteína, possível derivado do ovo"
-    },
     "ovoinibidor": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém ovoinibidor, derivado do ovo"
     },
-    "cistatina": {
-        "restricao": "ovos",
-        "mensagem": "Contém cistatina, possível derivado do ovo"
-    },
     "vitelina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém vitelina, derivado do ovo"
     },
     "livetina": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém livetina, derivado do ovo"
     },
-    "lipoproteina": {
-        "restricao": "ovos",
-        "mensagem": "Contém lipoproteína, possível derivado do ovo"
-    },
     "clara de ovo": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém clara de ovo"
     },
     "clara de ovo liofilizada": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém clara de ovo liofilizada"
     },
     "gema de ovo": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém gema de ovo"
     },
     "solidos de ovo": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "Contém sólidos de ovo"
     },
-    "lecitina": {
-        "restricao": "ovos",
-        "mensagem": "Pode conter lecitina derivada do ovo"
-    },
-    "lipoproteina de baixa densidade": {
-        "restricao": "ovos",
-        "mensagem": "Contém lipoproteína de baixa densidade, possível derivado do ovo"
-    },
-        # =========================
-    # TRIGO / GLÚTEN
-    # =========================
     "trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém trigo, incompatível com restrição ao glúten"
     },
     "farinha de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farinha de trigo, incompatível com restrição ao glúten"
     },
     "farinha de trigo integral": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farinha de trigo integral, incompatível com restrição ao glúten"
     },
     "farinha de trigo enriquecida com ferro e acido folico": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farinha de trigo enriquecida, incompatível com restrição ao glúten"
     },
     "farinha de trigo enriquecida com ferro": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farinha de trigo enriquecida, incompatível com restrição ao glúten"
     },
     "flocos de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém flocos de trigo, incompatível com restrição ao glúten"
     },
     "farelo de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farelo de trigo, incompatível com restrição ao glúten"
     },
     "farelo de trigo hidrolisado": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farelo de trigo hidrolisado, incompatível com restrição ao glúten"
     },
-    "erva de trigo": {
-        "restricao": "gluten",
-        "mensagem": "Contém erva de trigo"
-    },
-    "grama de trigo": {
-        "restricao": "gluten",
-        "mensagem": "Contém grama de trigo"
-    },
-    "capim de trigo": {
-        "restricao": "gluten",
-        "mensagem": "Contém capim de trigo"
-    },
-    "clorofila": {
-        "restricao": "gluten",
-        "mensagem": "Pode conter derivado de trigo: clorofila"
-    },
     "germen de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém gérmen de trigo, incompatível com restrição ao glúten"
     },
-    "amido de trigo": {
-        "restricao": "gluten",
-        "mensagem": "Contém amido de trigo, incompatível com restrição ao glúten"
-    },
-    "brotos de trigo": {
-        "restricao": "gluten",
-        "mensagem": "Contém brotos de trigo"
-    },
     "cerveja de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém cerveja de trigo, incompatível com restrição ao glúten"
     },
-    "cuscuz": {
-        "restricao": "gluten",
-        "mensagem": "Pode conter trigo: cuscuz"
-    },
     "farinha de matza": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farinha de matzá, incompatível com restrição ao glúten"
     },
     "matza": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém matzá, incompatível com restrição ao glúten"
     },
     "matzo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém matzo, incompatível com restrição ao glúten"
     },
     "matsah": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém matsah, incompatível com restrição ao glúten"
     },
     "matze": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém matze, incompatível com restrição ao glúten"
     },
-    "trigo sarraceno": {
-        "restricao": "gluten",
-        "mensagem": "Atenção: trigo sarraceno pode aparecer em rótulos; verificar risco de contaminação ou composição"
-    },
     "bagos integrais de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém bagos integrais de trigo"
     },
-    "quibe": {
-        "restricao": "gluten",
-        "mensagem": "Pode conter trigo: quibe"
-    },
-    "kibe": {
-        "restricao": "gluten",
-        "mensagem": "Pode conter trigo: kibe"
-    },
-    "farinha de rosca": {
-        "restricao": "gluten",
-        "mensagem": "Contém farinha de rosca, geralmente derivada do trigo"
-    },
     "pudim de pao": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém pão, incompatível com restrição ao glúten"
     },
     "gluten": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém glúten, incompatível com restrição ao glúten"
     },
     "gluten de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém glúten de trigo"
     },
-    "farinha de cereais": {
-        "restricao": "gluten",
-        "mensagem": "Pode conter cereais com glúten"
-    },
-    "extrato de cereais": {
-        "restricao": "gluten",
-        "mensagem": "Pode conter extrato de cereais com glúten"
-    },
     "atta": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém atta, farinha de trigo"
     },
     "chakkia atta": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém chakkia atta, farinha de trigo"
     },
     "triguilho": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém triguilho, derivado do trigo"
     },
     "bulgur": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém bulgur, derivado do trigo"
     },
     "burghul": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém burghul, derivado do trigo"
     },
     "espelta": {
-        "restricao": "gluten",
-        "mensagem": "Contém espelta, cereal com glúten"
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "Contém espelta, cereal relacionado ao trigo, incompatível com restrição ao glúten"
     },
     "graos integrais do trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém grãos integrais do trigo"
     },
-    "oleo de germen de trigo": {
-        "restricao": "gluten",
-        "mensagem": "Contém óleo de gérmen de trigo"
-    },
     "semolina": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém semolina, derivada do trigo"
     },
     "semolina de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém semolina de trigo"
     },
     "proteina isolada de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém proteína isolada de trigo"
     },
     "trigo grano duro": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém trigo grano duro"
     },
     "trigo einkorn": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém trigo einkorn"
     },
     "trigo emmer": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém trigo emmer"
     },
     "trigo kamut": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém trigo kamut"
     },
     "trigo durum": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém trigo durum"
     },
     "trigo fu": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém trigo fu"
     },
     "seitan": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém seitan, também conhecido como carne de glúten"
     },
     "carne de gluten": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém carne de glúten"
     },
     "triticale": {
-        "restricao": "gluten",
-        "mensagem": "Contém triticale, cereal com glúten"
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "Contém triticale, cereal hibridizado, incompatível com restrição ao glúten"
     },
-        # =========================
-    # SOJA
-    # =========================
     "soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém soja, incompatível com restrição ou alergia a soja"
     },
     "edamame": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém edamame, derivado da soja"
     },
     "conglicina": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém conglicina, proteína da soja"
     },
     "conglicinina": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém conglicinina, proteína da soja"
     },
     "glicinina": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém glicinina, proteína da soja"
     },
-    "globulinas": {
-        "restricao": "soja",
-        "mensagem": "Pode conter globulinas de soja"
-    },
-    "gordura vegetal": {
-        "restricao": "soja",
-        "mensagem": "Pode conter gordura vegetal derivada de soja"
-    },
-    "inibidor de tripsina": {
-        "restricao": "soja",
-        "mensagem": "Pode conter inibidor de tripsina de soja"
-    },
-    "proteina vegetal": {
-        "restricao": "soja",
-        "mensagem": "Pode conter proteína vegetal de soja"
-    },
-    "isoflavona": {
-        "restricao": "soja",
-        "mensagem": "Contém isoflavona, normalmente associada à soja"
-    },
     "lecitina de soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém lecitina de soja"
     },
-    "lipoxigenase": {
-        "restricao": "soja",
-        "mensagem": "Pode conter lipoxigenase de soja"
-    },
-    "lipo-oxigenase": {
-        "restricao": "soja",
-        "mensagem": "Pode conter lipo-oxigenase de soja"
-    },
-    "hemaglutinina": {
-        "restricao": "soja",
-        "mensagem": "Pode conter hemaglutinina de soja"
-    },
     "pasta de soja fermentada": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém pasta de soja fermentada"
     },
     "proteina isolada de soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém proteína isolada de soja"
     },
     "pis": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém PIS, proteína isolada de soja"
     },
     "proteina texturizada de soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém proteína texturizada de soja"
     },
     "pts": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém PTS, proteína texturizada de soja"
     },
-    "proteina vegetal texturizada": {
-        "restricao": "soja",
-        "mensagem": "Pode conter proteína vegetal texturizada de soja"
-    },
-    "proteina de planta hidrolisada": {
-        "restricao": "soja",
-        "mensagem": "Pode conter proteína de planta hidrolisada de soja"
-    },
-    "caldo vegetal": {
-        "restricao": "soja",
-        "mensagem": "Pode conter caldo vegetal derivado de soja"
-    },
-    "urease": {
-        "restricao": "soja",
-        "mensagem": "Pode conter urease de soja"
-    },
     "extrato de soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém extrato de soja"
     },
-    "beta-amilase": {
-        "restricao": "soja",
-        "mensagem": "Pode conter beta-amilase associada à soja"
-    },
     "molho de soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém molho de soja"
     },
     "shoyu": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém shoyu, molho de soja"
     },
     "misso": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém missô, derivado de soja"
     },
     "tofu": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém tofu, derivado de soja"
     },
     "tempeh": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém tempeh, derivado de soja"
     },
     "tamari": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém tamari, derivado de soja"
     },
-    "teriyaki": {
-        "restricao": "soja",
-        "mensagem": "Pode conter soja: molho teriyaki"
-    },
     "sufu": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém sufu, derivado de soja"
     },
     "tao-cho": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém tao-cho, derivado de soja"
     },
     "tao-si": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém tao-si, derivado de soja"
     },
     "taotjo": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém taotjo, derivado de soja"
     },
     "yuba": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém yuba, derivado de soja"
     },
     "natto": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "Contém natto, derivado de soja"
     },
-        # =========================
-    # CENTEIO / GLÚTEN
-    # =========================
     "centeio": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém centeio, incompatível com restrição ao glúten"
     },
     "farinha de centeio": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farinha de centeio, incompatível com restrição ao glúten"
     },
     "flocos de centeio": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém flocos de centeio, incompatível com restrição ao glúten"
     },
     "farelo de centeio": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farelo de centeio, incompatível com restrição ao glúten"
     },
     "malte de centeio": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém malte de centeio, incompatível com restrição ao glúten"
     },
-
-    # =========================
-    # CEVADA / GLÚTEN
-    # =========================
     "cevada": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém cevada, incompatível com restrição ao glúten"
     },
     "farinha de cevada": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém farinha de cevada, incompatível com restrição ao glúten"
     },
     "malte de cevada": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém malte de cevada, incompatível com restrição ao glúten"
     },
-    "malte": {
-        "restricao": "gluten",
-        "mensagem": "Contém malte, geralmente derivado de cevada, incompatível com restrição ao glúten"
-    },
     "extrato de malte": {
-        "restricao": "gluten",
-        "mensagem": "Contém extrato de malte, geralmente derivado de cevada, incompatível com restrição ao glúten"
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "Contém extrato de malte, derivado de cevada, incompatível com restrição ao glúten"
     },
     "xarope de malte": {
-        "restricao": "gluten",
-        "mensagem": "Contém xarope de malte, geralmente derivado de cevada, incompatível com restrição ao glúten"
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "Contém xarope de malte, derivado de cevada, incompatível com restrição ao glúten"
     },
     "vinagre de malte": {
-        "restricao": "gluten",
-        "mensagem": "Contém vinagre de malte, geralmente derivado de cevada, incompatível com restrição ao glúten"
-    },
-    "cerveja": {
-        "restricao": "gluten",
-        "mensagem": "Pode conter cevada ou malte, incompatível com restrição ao glúten"
-    },
-
-    # =========================
-    # AVEIA / GLÚTEN
-    # =========================
-    "aveia": {
-        "restricao": "gluten",
-        "mensagem": "Contém aveia; pode ser incompatível com restrição ao glúten, especialmente por contaminação cruzada"
-    },
-    "farinha de aveia": {
-        "restricao": "gluten",
-        "mensagem": "Contém farinha de aveia; pode ser incompatível com restrição ao glúten"
-    },
-    "flocos de aveia": {
-        "restricao": "gluten",
-        "mensagem": "Contém flocos de aveia; pode ser incompatível com restrição ao glúten"
-    },
-    "farelo de aveia": {
-        "restricao": "gluten",
-        "mensagem": "Contém farelo de aveia; pode ser incompatível com restrição ao glúten"
-    },
-    "bebida de aveia": {
-        "restricao": "gluten",
-        "mensagem": "Contém bebida de aveia; pode ser incompatível com restrição ao glúten"
-    },
-
-    # =========================
-    # ESTIRPES HIBRIDIZADAS / GLÚTEN
-    # =========================
-    "espelta": {
-        "restricao": "gluten",
-        "mensagem": "Contém espelta, cereal relacionado ao trigo, incompatível com restrição ao glúten"
-    },
-    "triticale": {
-        "restricao": "gluten",
-        "mensagem": "Contém triticale, cereal hibridizado, incompatível com restrição ao glúten"
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "Contém vinagre de malte, derivado de cevada, incompatível com restrição ao glúten"
     },
     "kamut": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém kamut, variedade de trigo, incompatível com restrição ao glúten"
     },
     "einkorn": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém einkorn, variedade de trigo, incompatível com restrição ao glúten"
     },
     "emmer": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém emmer, variedade de trigo, incompatível com restrição ao glúten"
     },
     "durum": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "Contém durum, variedade de trigo, incompatível com restrição ao glúten"
     },
-
-    # =========================
-    # CRUSTÁCEOS
-    # =========================
     "crustaceos": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém crustáceos, incompatível com restrição ou alergia a crustáceos"
     },
     "crustaceo": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém crustáceo, incompatível com restrição ou alergia a crustáceos"
     },
     "camarao": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém camarão, incompatível com restrição ou alergia a crustáceos"
     },
     "lagosta": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém lagosta, incompatível com restrição ou alergia a crustáceos"
     },
     "caranguejo": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém caranguejo, incompatível com restrição ou alergia a crustáceos"
     },
     "siri": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém siri, incompatível com restrição ou alergia a crustáceos"
     },
     "lagostim": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém lagostim, incompatível com restrição ou alergia a crustáceos"
     },
     "krill": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém krill, incompatível com restrição ou alergia a crustáceos"
     },
     "extrato de camarao": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém extrato de camarão, incompatível com restrição ou alergia a crustáceos"
     },
     "caldo de camarao": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "Contém caldo de camarão, incompatível com restrição ou alergia a crustáceos"
     },
-
-    # =========================
-    # PEIXES
-    # =========================
     "peixe": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém peixe, incompatível com restrição ou alergia a peixes"
     },
     "peixes": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém peixes, incompatível com restrição ou alergia a peixes"
     },
     "atum": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém atum, incompatível com restrição ou alergia a peixes"
     },
     "sardinha": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém sardinha, incompatível com restrição ou alergia a peixes"
     },
     "salmao": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém salmão, incompatível com restrição ou alergia a peixes"
     },
     "bacalhau": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém bacalhau, incompatível com restrição ou alergia a peixes"
     },
     "anchova": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém anchova, incompatível com restrição ou alergia a peixes"
     },
     "tilapia": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém tilápia, incompatível com restrição ou alergia a peixes"
     },
     "merluza": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém merluza, incompatível com restrição ou alergia a peixes"
     },
     "pescada": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém pescada, incompatível com restrição ou alergia a peixes"
     },
     "oleo de peixe": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém óleo de peixe, incompatível com restrição ou alergia a peixes"
     },
     "gelatina de peixe": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém gelatina de peixe, incompatível com restrição ou alergia a peixes"
     },
     "caldo de peixe": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém caldo de peixe, incompatível com restrição ou alergia a peixes"
     },
     "extrato de peixe": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "Contém extrato de peixe, incompatível com restrição ou alergia a peixes"
     },
-
-    # =========================
-    # AMENDOIM
-    # =========================
     "amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "Contém amendoim, incompatível com restrição ou alergia a amendoim"
     },
     "pasta de amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "Contém pasta de amendoim, incompatível com restrição ou alergia a amendoim"
     },
     "farinha de amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "Contém farinha de amendoim, incompatível com restrição ou alergia a amendoim"
     },
     "oleo de amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "Contém óleo de amendoim, incompatível com restrição ou alergia a amendoim"
     },
     "creme de amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "Contém creme de amendoim, incompatível com restrição ou alergia a amendoim"
     },
     "manteiga de amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "Contém manteiga de amendoim, incompatível com restrição ou alergia a amendoim"
     },
     "amendoim torrado": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "Contém amendoim torrado, incompatível com restrição ou alergia a amendoim"
     },
-
-    # =========================
-    # AMÊNDOA
-    # =========================
     "amendoa": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém amêndoa, incompatível com restrição ou alergia a oleaginosas"
     },
     "amendoas": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém amêndoas, incompatível com restrição ou alergia a oleaginosas"
     },
     "farinha de amendoa": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém farinha de amêndoa, incompatível com restrição ou alergia a oleaginosas"
     },
     "leite de amendoa": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém leite de amêndoa, incompatível com restrição ou alergia a oleaginosas"
     },
     "oleo de amendoa": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém óleo de amêndoa, incompatível com restrição ou alergia a oleaginosas"
     },
     "prunus dulcis": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Prunus dulcis, nome científico da amêndoa"
     },
     "prunus amygdalus": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Prunus amygdalus, nome associado à amêndoa"
     },
     "amygdalus communis": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Amygdalus communis, nome associado à amêndoa"
     },
-
-    # =========================
-    # AVELÃ
-    # =========================
     "avela": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém avelã, incompatível com restrição ou alergia a oleaginosas"
     },
     "avelas": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém avelãs, incompatível com restrição ou alergia a oleaginosas"
     },
     "farinha de avela": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém farinha de avelã, incompatível com restrição ou alergia a oleaginosas"
     },
     "creme de avela": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém creme de avelã, incompatível com restrição ou alergia a oleaginosas"
     },
     "corylus": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Corylus, nome científico associado à avelã"
     },
-
-    # =========================
-    # CASTANHA-DE-CAJU
-    # =========================
     "castanha-de-caju": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha-de-caju, incompatível com restrição ou alergia a oleaginosas"
     },
     "castanha de caju": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha-de-caju, incompatível com restrição ou alergia a oleaginosas"
     },
     "farinha de castanha de caju": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém farinha de castanha-de-caju, incompatível com restrição ou alergia a oleaginosas"
     },
     "pasta de castanha de caju": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém pasta de castanha-de-caju, incompatível com restrição ou alergia a oleaginosas"
     },
     "anacardium occidentale": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Anacardium occidentale, nome científico da castanha-de-caju"
     },
-
-    # =========================
-    # CASTANHA-DO-BRASIL / CASTANHA-DO-PARÁ
-    # =========================
     "castanha-do-brasil": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha-do-brasil, incompatível com restrição ou alergia a oleaginosas"
     },
     "castanha do brasil": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha-do-brasil, incompatível com restrição ou alergia a oleaginosas"
     },
     "castanha-do-para": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha-do-pará, incompatível com restrição ou alergia a oleaginosas"
     },
     "castanha do para": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha-do-pará, incompatível com restrição ou alergia a oleaginosas"
     },
     "bertholletia excelsa": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Bertholletia excelsa, nome científico da castanha-do-brasil ou castanha-do-pará"
     },
-
-    # =========================
-    # MACADÂMIA
-    # =========================
     "macadamia": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém macadâmia, incompatível com restrição ou alergia a oleaginosas"
     },
     "macadamias": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém macadâmias, incompatível com restrição ou alergia a oleaginosas"
     },
     "oleo de macadamia": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém óleo de macadâmia, incompatível com restrição ou alergia a oleaginosas"
     },
     "macadamia spp": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Macadamia spp., nome científico associado à macadâmia"
     },
-
-    # =========================
-    # NOZES
-    # =========================
     "noz": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém noz, incompatível com restrição ou alergia a oleaginosas"
     },
     "nozes": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém nozes, incompatível com restrição ou alergia a oleaginosas"
     },
     "farinha de nozes": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém farinha de nozes, incompatível com restrição ou alergia a oleaginosas"
     },
     "oleo de nozes": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém óleo de nozes, incompatível com restrição ou alergia a oleaginosas"
     },
     "juglans": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Juglans, nome científico associado às nozes"
     },
-
-    # =========================
-    # PECÃ
-    # =========================
     "peca": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém pecã, incompatível com restrição ou alergia a oleaginosas"
     },
     "pecas": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém pecãs, incompatível com restrição ou alergia a oleaginosas"
     },
     "noz peca": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém noz-pecã, incompatível com restrição ou alergia a oleaginosas"
     },
     "nozes peca": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém nozes-pecã, incompatível com restrição ou alergia a oleaginosas"
     },
     "carya": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Carya, nome científico associado à pecã"
     },
-
-    # =========================
-    # PISTACHE
-    # =========================
     "pistache": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém pistache, incompatível com restrição ou alergia a oleaginosas"
     },
     "pistaches": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém pistaches, incompatível com restrição ou alergia a oleaginosas"
     },
     "pistacia": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Pistacia, nome científico associado ao pistache"
     },
-
-    # =========================
-    # PINOLI
-    # =========================
     "pinoli": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém pinoli, incompatível com restrição ou alergia a oleaginosas"
     },
     "pinolis": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém pinoli, incompatível com restrição ou alergia a oleaginosas"
     },
-    "pinhao": {
-        "restricao": "oleaginosas",
-        "mensagem": "Pode conter pinoli ou sementes de pinus, verificar composição"
-    },
     "pinus": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Pinus spp., nome científico associado ao pinoli"
     },
-
-    # =========================
-    # CASTANHAS EM GERAL
-    # =========================
     "castanha": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha, incompatível com restrição ou alergia a oleaginosas"
     },
     "castanhas": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanhas, incompatível com restrição ou alergia a oleaginosas"
     },
     "mix de castanhas": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém mix de castanhas, incompatível com restrição ou alergia a oleaginosas"
     },
     "farinha de castanhas": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém farinha de castanhas, incompatível com restrição ou alergia a oleaginosas"
     },
     "castanea": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém Castanea spp., nome científico associado a castanhas"
     },
     "castanha de baru": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha de baru, incompatível com restrição ou alergia a oleaginosas"
     },
     "castanha-de-baru": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "Contém castanha de baru, incompatível com restrição ou alergia a oleaginosas"
     },
-
-    # =========================
-    # LÁTEX NATURAL
-    # =========================
     "latex": {
-        "restricao": "latex",
+        "restricoes": [
+            "latex"
+        ],
         "mensagem": "Contém látex natural, incompatível com restrição ou alergia a látex"
     },
     "latex natural": {
-        "restricao": "latex",
+        "restricoes": [
+            "latex"
+        ],
         "mensagem": "Contém látex natural, incompatível com restrição ou alergia a látex"
     },
     "borracha natural": {
-        "restricao": "latex",
+        "restricoes": [
+            "latex"
+        ],
         "mensagem": "Pode conter látex natural, incompatível com restrição ou alergia a látex"
     },
-
-        # =========================
-    # FRASES DE RÓTULO - CONTÉM
-    # =========================
-
     "contem gluten": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "O rótulo informa: contém glúten"
     },
     "contem trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "O rótulo informa: contém trigo, incompatível com restrição ao glúten"
     },
     "contem derivados de trigo": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "O rótulo informa: contém derivados de trigo, incompatível com restrição ao glúten"
     },
     "contem centeio": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "O rótulo informa: contém centeio, incompatível com restrição ao glúten"
     },
     "contem cevada": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "O rótulo informa: contém cevada, incompatível com restrição ao glúten"
     },
-    "contem aveia": {
-        "restricao": "gluten",
-        "mensagem": "O rótulo informa: contém aveia, incompatível com restrição ao glúten"
-    },
-
     "contem leite": {
-        "restricao": "lactose",
-        "mensagem": "O rótulo informa: contém leite, incompatível com restrição à lactose"
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "O rótulo informa: contém leite"
     },
     "contem lactose": {
-        "restricao": "lactose",
+        "restricoes": [
+            "lactose"
+        ],
         "mensagem": "O rótulo informa: contém lactose"
     },
     "contem derivados de leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "O rótulo informa: contém derivados de leite"
     },
     "contem leite e derivados": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "O rótulo informa: contém leite e derivados"
     },
-
     "contem ovo": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "O rótulo informa: contém ovo"
     },
     "contem ovos": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "O rótulo informa: contém ovos"
     },
     "contem derivados de ovo": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "O rótulo informa: contém derivados de ovo"
     },
-
     "contem soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "O rótulo informa: contém soja"
     },
     "contem derivados de soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "O rótulo informa: contém derivados de soja"
     },
-
     "contem amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "O rótulo informa: contém amendoim"
     },
     "contem derivados de amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "O rótulo informa: contém derivados de amendoim"
     },
-
     "contem peixe": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "O rótulo informa: contém peixe"
     },
     "contem peixes": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "O rótulo informa: contém peixes"
     },
     "contem derivados de peixe": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "O rótulo informa: contém derivados de peixe"
     },
-
     "contem crustaceos": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "O rótulo informa: contém crustáceos"
     },
     "contem camarao": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "O rótulo informa: contém camarão"
     },
     "contem caranguejo": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "O rótulo informa: contém caranguejo"
     },
     "contem lagosta": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "O rótulo informa: contém lagosta"
     },
-
     "contem castanhas": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém castanhas"
     },
     "contem castanha": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém castanha"
     },
     "contem amendoa": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém amêndoa"
     },
     "contem avela": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém avelã"
     },
     "contem castanha de caju": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém castanha-de-caju"
     },
     "contem castanha-do-caju": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém castanha-de-caju"
     },
     "contem castanha-do-para": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém castanha-do-pará"
     },
     "contem castanha do para": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém castanha-do-pará"
     },
     "contem castanha-do-brasil": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém castanha-do-brasil"
     },
     "contem castanha do brasil": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém castanha-do-brasil"
     },
     "contem macadamia": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém macadâmia"
     },
     "contem nozes": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém nozes"
     },
     "contem peca": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém pecã"
     },
     "contem pistache": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém pistache"
     },
     "contem pinoli": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: contém pinoli"
     },
-
     "contem latex": {
-        "restricao": "latex",
+        "restricoes": [
+            "latex"
+        ],
         "mensagem": "O rótulo informa: contém látex"
     },
     "contem latex natural": {
-        "restricao": "latex",
+        "restricoes": [
+            "latex"
+        ],
         "mensagem": "O rótulo informa: contém látex natural"
     },
-        # =========================
-    # FRASES DE RÓTULO - PODE CONTER
-    # =========================
-
     "pode conter gluten": {
-        "restricao": "gluten",
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "O rótulo informa: pode conter glúten"
     },
-    "pode conter centeio":{
-        "restricao": "gluten",
+    "pode conter centeio": {
+        "restricoes": [
+            "gluten"
+        ],
         "mensagem": "O rótulo informa: pode conter centeio"
     },
     "pode conter leite": {
-        "restricao": "lactose",
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
         "mensagem": "O rótulo informa: pode conter leite"
     },
     "pode conter lactose": {
-        "restricao": "lactose",
+        "restricoes": [
+            "lactose"
+        ],
         "mensagem": "O rótulo informa: pode conter lactose"
     },
     "pode conter ovo": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "O rótulo informa: pode conter ovo"
     },
     "pode conter ovos": {
-        "restricao": "ovos",
+        "restricoes": [
+            "ovos"
+        ],
         "mensagem": "O rótulo informa: pode conter ovos"
     },
     "pode conter soja": {
-        "restricao": "soja",
+        "restricoes": [
+            "soja"
+        ],
         "mensagem": "O rótulo informa: pode conter soja"
     },
     "pode conter amendoim": {
-        "restricao": "amendoim",
+        "restricoes": [
+            "amendoim"
+        ],
         "mensagem": "O rótulo informa: pode conter amendoim"
     },
     "pode conter peixe": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "O rótulo informa: pode conter peixe"
     },
     "pode conter peixes": {
-        "restricao": "peixes",
+        "restricoes": [
+            "peixes"
+        ],
         "mensagem": "O rótulo informa: pode conter peixes"
     },
     "pode conter crustaceos": {
-        "restricao": "crustaceos",
+        "restricoes": [
+            "crustaceos"
+        ],
         "mensagem": "O rótulo informa: pode conter crustáceos"
     },
     "pode conter castanhas": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: pode conter castanhas"
     },
     "pode conter amendoa": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: pode conter amêndoa"
     },
     "pode conter avela": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: pode conter avelã"
     },
     "pode conter castanha de caju": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: pode conter castanha-de-caju"
     },
     "pode conter castanha-de-caju": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: pode conter castanha-de-caju"
     },
     "pode conter castanha do para": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: pode conter castanha-do-pará"
     },
     "pode conter castanha-do-para": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: pode conter castanha-do-pará"
     },
     "pode conter nozes": {
-        "restricao": "oleaginosas",
+        "restricoes": [
+            "oleaginosas"
+        ],
         "mensagem": "O rótulo informa: pode conter nozes"
     },
     "pode conter latex": {
-        "restricao": "latex",
+        "restricoes": [
+            "latex"
+        ],
         "mensagem": "O rótulo informa: pode conter látex"
     },
-    # =========================
-    # FIBRAS
-    # =========================
-    "fibra de trigo": {
-        "restricao": "gluten",
-        "mensagem": "Contém fibra de trigo; é incompatível com restrição ao glúten"
-    },
     "fibra de soja": {
-            "restricao": "soja",
-            "mensagem": "Contém fibra de soja; é incompatível com restrição à soja"
-        },
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "Contém fibra de soja; é incompatível com restrição à soja"
+    }
+}
+
+# Origem variável / processamento / ausência de declaração: pedir verificação.
+regras_para_verificar = {
+    "diacetil": {
+        "restricoes": [
+            "leite"
+        ],
+        "mensagem": "A origem ou composição de diacetil precisa ser confirmada no rótulo."
+    },
+    "nougat": {
+        "restricoes": [
+            "leite"
+        ],
+        "mensagem": "A origem ou composição de nougat precisa ser confirmada no rótulo."
+    },
+    "lisozima": {
+        "restricoes": [
+            "ovos"
+        ],
+        "mensagem": "A origem ou composição de lisozima precisa ser confirmada no rótulo."
+    },
+    "flavoproteina": {
+        "restricoes": [
+            "ovos"
+        ],
+        "mensagem": "A origem ou composição de flavoproteina precisa ser confirmada no rótulo."
+    },
+    "cistatina": {
+        "restricoes": [
+            "ovos"
+        ],
+        "mensagem": "A origem ou composição de cistatina precisa ser confirmada no rótulo."
+    },
+    "lipoproteina": {
+        "restricoes": [
+            "ovos"
+        ],
+        "mensagem": "A origem ou composição de lipoproteina precisa ser confirmada no rótulo."
+    },
+    "lecitina": {
+        "restricoes": [
+            "ovos"
+        ],
+        "mensagem": "A origem ou composição de lecitina precisa ser confirmada no rótulo."
+    },
+    "lipoproteina de baixa densidade": {
+        "restricoes": [
+            "ovos"
+        ],
+        "mensagem": "A origem ou composição de lipoproteina de baixa densidade precisa ser confirmada no rótulo."
+    },
+    "clorofila": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de clorofila precisa ser confirmada no rótulo."
+    },
+    "cuscuz": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de cuscuz precisa ser confirmada no rótulo."
+    },
+    "quibe": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de quibe precisa ser confirmada no rótulo."
+    },
+    "kibe": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de kibe precisa ser confirmada no rótulo."
+    },
+    "farinha de rosca": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de farinha de rosca precisa ser confirmada no rótulo."
+    },
+    "farinha de cereais": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de farinha de cereais precisa ser confirmada no rótulo."
+    },
+    "extrato de cereais": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de extrato de cereais precisa ser confirmada no rótulo."
+    },
+    "cerveja": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de cerveja precisa ser confirmada no rótulo."
+    },
+    "globulinas": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de globulinas precisa ser confirmada no rótulo."
+    },
+    "gordura vegetal": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de gordura vegetal precisa ser confirmada no rótulo."
+    },
+    "inibidor de tripsina": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de inibidor de tripsina precisa ser confirmada no rótulo."
+    },
+    "proteina vegetal": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de proteina vegetal precisa ser confirmada no rótulo."
+    },
+    "isoflavona": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de isoflavona precisa ser confirmada no rótulo."
+    },
+    "lipoxigenase": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de lipoxigenase precisa ser confirmada no rótulo."
+    },
+    "lipo-oxigenase": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de lipo-oxigenase precisa ser confirmada no rótulo."
+    },
+    "hemaglutinina": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de hemaglutinina precisa ser confirmada no rótulo."
+    },
+    "proteina vegetal texturizada": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de proteina vegetal texturizada precisa ser confirmada no rótulo."
+    },
+    "proteina de planta hidrolisada": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de proteina de planta hidrolisada precisa ser confirmada no rótulo."
+    },
+    "caldo vegetal": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de caldo vegetal precisa ser confirmada no rótulo."
+    },
+    "urease": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de urease precisa ser confirmada no rótulo."
+    },
+    "beta-amilase": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de beta-amilase precisa ser confirmada no rótulo."
+    },
+    "teriyaki": {
+        "restricoes": [
+            "soja"
+        ],
+        "mensagem": "A origem ou composição de teriyaki precisa ser confirmada no rótulo."
+    },
+    "pinhao": {
+        "restricoes": [
+            "oleaginosas"
+        ],
+        "mensagem": "A origem ou composição de pinhao precisa ser confirmada no rótulo."
+    },
+    "erva de trigo": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de erva de trigo precisa ser confirmada no rótulo."
+    },
+    "grama de trigo": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de grama de trigo precisa ser confirmada no rótulo."
+    },
+    "capim de trigo": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de capim de trigo precisa ser confirmada no rótulo."
+    },
+    "brotos de trigo": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de brotos de trigo precisa ser confirmada no rótulo."
+    },
+    "oleo de germen de trigo": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de oleo de germen de trigo precisa ser confirmada no rótulo."
+    },
+    "amido de trigo": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de amido de trigo precisa ser confirmada no rótulo."
+    },
+    "fibra de trigo": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de fibra de trigo precisa ser confirmada no rótulo."
+    },
+    "malte": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A origem ou composição de malte precisa ser confirmada no rótulo."
+    },
+    "aveia": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A presença de aveia sozinha não confirma glúten. Verifique a declaração de glúten do produto."
+    },
+    "farinha de aveia": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A presença de farinha de aveia sozinha não confirma glúten. Verifique a declaração de glúten do produto."
+    },
+    "flocos de aveia": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A presença de flocos de aveia sozinha não confirma glúten. Verifique a declaração de glúten do produto."
+    },
+    "farelo de aveia": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A presença de farelo de aveia sozinha não confirma glúten. Verifique a declaração de glúten do produto."
+    },
+    "bebida de aveia": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A presença de bebida de aveia sozinha não confirma glúten. Verifique a declaração de glúten do produto."
+    },
     "fibra de aveia": {
-            "restricao": "gluten",
-            "mensagem": "Contém fibra de aveia; pode ser incompatível com restrição ao glúten"
-        }
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A presença de fibra de aveia sozinha não confirma glúten. Verifique a declaração de glúten do produto."
+    },
+    "contem aveia": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A presença de contem aveia sozinha não confirma glúten. Verifique a declaração de glúten do produto."
+    },
+    "trigo sarraceno": {
+        "restricoes": [
+            "gluten"
+        ],
+        "mensagem": "A presença de trigo sarraceno sozinha não confirma glúten. Verifique a declaração de glúten do produto."
+    },
+    "lactulose": {
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "O nome lactulose não deve ser usado sozinho para concluir presença de leite ou lactose; confirme a composição."
+    },
+    "lactulona": {
+        "restricoes": [
+            "leite",
+            "lactose"
+        ],
+        "mensagem": "Confirme a identificação e composição do ingrediente lactulona."
+    }
 }
