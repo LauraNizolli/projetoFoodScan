@@ -9,6 +9,7 @@ from executar_ocr import executar_ocr
 from extrairImg import extrair_dados_rotulo
 from executar_analise import executar_analise
 from fastapi.middleware.cors import CORSMiddleware
+from analisar_imagem import analisar_imagem
 
 
 
@@ -125,6 +126,8 @@ async def analisar_imagem(
     analise = executar_analise(
 
         nome_produto,
+        
+        texto_ocr,
 
         ingredientes,
 

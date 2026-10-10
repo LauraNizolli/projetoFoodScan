@@ -9,6 +9,7 @@ from gemini_ia import analisar_com_ia
 
 def executar_analise(
     nome_produto,
+    texto_ocr,
     ingredientes,
     advertencias,
     restricoes
@@ -19,7 +20,7 @@ def executar_analise(
     # ==========================
 
     lista_ingredientes = [ 
-        normalizar(i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s+e\s+|\s+E\s+|\s*:\s*|\s*\(\s*|\s*\)\s*", ingredientes)
+        normalizar(i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s*:\s*|\s*\(\s*|\s*\)\s*", ingredientes)
     ]
 
     print(lista_ingredientes)
@@ -29,7 +30,7 @@ def executar_analise(
     # ==========================
 
     lista_advertencias = [
-        normalizar (i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s+e\s+|\s+E\s+|\s*:\s*|\s*\(\s*|\s*\)\s*", advertencias)
+        normalizar (i) for i in re.split(r"\s*,\s*|\s*;\s*|\s*\.\s*|\s*:\s*|\s*\(\s*|\s*\)\s*", advertencias)
     ]
 
     print(lista_advertencias)
@@ -135,6 +136,9 @@ def executar_analise(
 
             "produto":
                 nome_produto,
+                
+            "texto original da OCR":
+                texto_ocr,
 
             "ingredientes":
                 ingredientes,
@@ -159,6 +163,9 @@ def executar_analise(
 
             "produto":
                 nome_produto,
+                
+            "texto original da OCR":
+                texto_ocr,
 
             "ingredientes":
                 ingredientes,
@@ -170,7 +177,7 @@ def executar_analise(
                 restricoes,
 
             "resultado":
-                "seguro para consumo",
+                "não foram identificados riscos",
 
             "motivos":
                 []
