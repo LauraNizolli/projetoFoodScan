@@ -1,12 +1,6 @@
-import os
-from dotenv import load_dotenv
-from google import genai
+import requests
 
-load_dotenv()
-
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
+URL_API = "https://unwoven-nurture-resurface.ngrok-free.dev"
 
 
 def verificar_com_ia(resultado_regras):
@@ -29,7 +23,7 @@ Não adicione informações irrelevantes, não invente ingredientes ou advertên
 
 Retorne um JSON com exatamente a seguinte estrutura:
 
-{
+{{
     "resultado_final": "não recomendado",
     "motivos": [
         {{
@@ -51,7 +45,7 @@ Retorne um JSON com exatamente a seguinte estrutura:
         }}
     ],
     "resposta final para o usuário": "mensagem resumida e clara"
-}
+}}
 
 Regras para preencher os campos:
 
@@ -79,20 +73,20 @@ Retorne exclusivamente um JSON válido, sem Markdown, sem blocos de código e se
 
 """
 
-    resposta = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
-        contents=prompt
-    )
 
-    return resposta.text
+    try:
+        resposta = requests.post(
+            f"{URL_API}/gerar",
+            json={"prompt": prompt},
+            timeout=240
+        )
 
-def analisar_com_ia(resposta: dict):
+        resposta.raise_for_status()
 
-    resposta_ia = verificar_com_ia(
-        resposta
-    )
+        dados = resposta.json()
+        return dados["resposta"]
 
-    return {
-        "analise_regras": resposta,
-        "analise_ia": resposta_ia
-    }
+    except requests.exceptions.RequestException as erro:
+        raise RuntimeError(
+            f"Não foi possível acessar a API do Qwen: {erro}"
+        ) from erro
