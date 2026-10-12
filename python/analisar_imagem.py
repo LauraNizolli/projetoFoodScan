@@ -66,12 +66,10 @@ async def analisar_imagem(
     analise = executar_analise(
 
         nome_produto,
-
+        texto_ocr,
         ingredientes,
-
         advertencias,
-
-        lista_restricoes
+        restricoes
     )
 
 

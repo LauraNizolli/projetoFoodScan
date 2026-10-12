@@ -43,6 +43,7 @@ def home():
 @app.post("/analisar")
 def analisar(
     nome_produto: str = Form(...),
+    texto_ocr: str = Form(...),
     ingredientes: str = Form(...),
     advertencias: str = Form(...),
     restricoes: str = Form(...)
@@ -51,6 +52,8 @@ def analisar(
     return executar_analise(
 
         nome_produto,
+
+        texto_ocr,
 
         ingredientes,
 
