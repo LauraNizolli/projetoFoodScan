@@ -1,7 +1,7 @@
 from normalizarFunc import normalizar
 import re
 from regras import regras
-from gemini_ia import analisar_com_ia
+from groq_ia import analisar_com_ia
 
 # ==========================
 # ANÁLISE
@@ -60,16 +60,14 @@ def executar_analise(
             restricao_necessaria = (
                 regras[
                     ingrediente
-                ]["restricao"]
+                ]["restricoes"]
             )
 
 
-            if (
-                restricao_necessaria
-                in
-                lista_restricoes
+            if any(
+            restricao in lista_restricoes
+            for restricao in restricao_necessaria
             ):
-
                 mensagem = (
                     regras[
                         ingrediente
@@ -99,19 +97,13 @@ def executar_analise(
             lista_advertencias
         ):
 
-            restricao_necessaria = (
-                dados_regra[
-                    "restricao"
-                ]
-            )
+            restricao_necessaria = dados_regra["restricoes"]
 
-
-            if (
-                restricao_necessaria
-                in
-                lista_restricoes
+            if any(
+            restricao in lista_restricoes
+            for restricao in restricao_necessaria
             ):
-
+                
                 mensagem = (
                     dados_regra[
                         "mensagem"

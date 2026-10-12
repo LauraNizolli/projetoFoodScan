@@ -1,5 +1,7 @@
 import os
 import httpx
+from dotenv import load_dotenv
+load_dotenv()
 
 from io import BytesIO
 from PIL import Image, ImageOps
