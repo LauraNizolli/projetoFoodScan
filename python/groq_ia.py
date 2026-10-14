@@ -51,6 +51,7 @@ EXEMPLOS_FEW_SHOT = [
             "motivos": [
                 "O rótulo informa: pode conter ovo"
             ]
+            
         },
         "saida": {
             "resultado_final": "não recomendado",
@@ -81,19 +82,18 @@ EXEMPLOS_FEW_SHOT = [
             "incertezas": [],
             "perguntas para análise": [
                                 {
-                                    "1. O alimento é seguro para consumo? Seja claro e objetivo": "SIM/NÃO",
+                                    "1. O alimento é seguro para consumo? Seja claro e objetivo": "Não",
                                     "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
                                     " qual (quais) restrições eles se relacionam? Liste somente todos "
                                     "os ingredientes e/ou advertências que apresentam algum risco "
                                     "para a restrição alimentar do usuário, em ordem de aparição do "
                                     "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
-                                    "de advertências).": "alimentos que estão relacionados às restrições. Se não tiver nenhum, escreva 'nenhum alimento "
-                                    "se relaciona com as restrições do usuário'",
+                                    "de advertências).": "Ingrediente(s): flocos de soja (soja). Advertência(s): CONTÉM DERIVADOS DE SOJA (soja), PODE CONTER OVO (ovos).",
                                     "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
                                     "a recomendação correta para o usuário, considerando os ingredientes"
                                     " e/ou advertências do rótulo do produto em relação à restrição do "
                                     "usuário? Ele encontrou todos os motivos do porquê o alimento não "
-                                    "é seguro?": "Sim/Não, o resultado 'não recomendado/recomendado' está/não está correto. Encontrou/Não encontrou todos os motivos."
+                                    "é seguro?": "Sim, o resultado “não recomendado” está correto. Não encontrou todos os motivos: identificou “pode conter ovo”, mas omitiu “flocos de soja” e “CONTÉM DERIVADOS DE SOJA”."
                                 }
             ],
             "resposta final para o usuário": (
@@ -163,6 +163,23 @@ EXEMPLOS_FEW_SHOT = [
                 }
             ],
             "incertezas": [],
+            "perguntas para análise": [
+                                            {
+                                                "1. O alimento é seguro para consumo? Seja claro e objetivo": "Não",
+                                                "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
+                                                " qual (quais) restrições eles se relacionam? Liste somente todos "
+                                                "os ingredientes e/ou advertências que apresentam algum risco "
+                                                "para a restrição alimentar do usuário, em ordem de aparição do "
+                                                "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
+                                                "de advertências).": "Ingrediente(s): aveia (aveia). Advertência(s): CONTÉM AVẸIA (aveia).",
+                                                "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
+                                                "a recomendação correta para o usuário, considerando os ingredientes"
+                                                " e/ou advertências do rótulo do produto em relação à restrição do "
+                                                "usuário? Ele encontrou todos os motivos do porquê o alimento não "
+                                                "é seguro?": "Sim, o resultado “não recomendado” está correto. Não "
+                                                "encontrou todos os motivos corretamente: identificou a aveia, mas a associou à restrição ao glúten, em vez de à restrição à aveia. O rótulo declara “NÃO CONTÉM GLUTEN”."
+                                            }
+            ],
             "resposta final para o usuário": (
                 "O produto não é recomendado porque contém aveia, "
                 "uma das restrições informadas. A análise anterior "
@@ -214,6 +231,23 @@ EXEMPLOS_FEW_SHOT = [
             "motivos": [],
             "possíveis omissões da análise anterior": [],
             "incertezas": [],
+            "perguntas para análise": [
+                    {
+                        "1. O alimento é seguro para consumo? Seja claro e objetivo": "SIM",
+                        "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
+                        " qual (quais) restrições eles se relacionam? Liste somente todos "
+                        "os ingredientes e/ou advertências que apresentam algum risco "
+                        "para a restrição alimentar do usuário, em ordem de aparição do "
+                        "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
+                        "de advertências).": "nenhum alimento se relaciona com as restrições do usuário",
+                        "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
+                        "a recomendação correta para o usuário, considerando os ingredientes"
+                        " e/ou advertências do rótulo do produto em relação à restrição do "
+                        "usuário? Ele encontrou todos os motivos do porquê o alimento não "
+                        "é seguro?": "Não, o resultado “não recomendado” não está correto com base "
+                        "no texto fornecido. Não há motivos de risco relacionados ao glúten identificados nesse rótulo, que declara “NÃO CONTÉM GLUTEN”. Os motivos apresentados pela API não são sustentados pelo texto."
+                    }
+                ],
             "resposta final para o usuário": (
                 "Não foram identificados riscos relacionados ao glúten "
                 "no texto fornecido. O rótulo declara não conter glúten. "
@@ -290,19 +324,18 @@ EXEMPLOS_FEW_SHOT = [
             "incertezas": [],
             "perguntas para análise": [
                     {
-                        "1. O alimento é seguro para consumo? Seja claro e objetivo": "SIM/NÃO",
+                        "1. O alimento é seguro para consumo? Seja claro e objetivo": "NÃO",
                         "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
                         " qual (quais) restrições eles se relacionam? Liste somente todos "
                         "os ingredientes e/ou advertências que apresentam algum risco "
                         "para a restrição alimentar do usuário, em ordem de aparição do "
                         "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
-                        "de advertências).": "alimentos que estão relacionados às restrições. Se não tiver nenhum, escreva 'nenhum alimento "
-                        "se relaciona com as restrições do usuário'",
+                        "de advertências).": "pasta de amêndoa (oleaginosas), CONTÉM DERIVADOS DE AMÊNDOA (oleaginosas), PODE CONTER CASTANHA-DE-CAJU (oleaginosas), PODE CONTER CASTANHA-DO-PARÁ (oleaginosas).",
                         "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
                         "a recomendação correta para o usuário, considerando os ingredientes"
                         " e/ou advertências do rótulo do produto em relação à restrição do "
                         "usuário? Ele encontrou todos os motivos do porquê o alimento não "
-                        "é seguro?": "Sim/Não, o resultado 'não recomendado/recomendado' está/não está correto. Encontrou/Não encontrou todos os motivos."
+                        "é seguro?": "Sim, o resultado “não recomendado” está correto. Não encontrou todos os motivos: omitiu “pasta de amêndoa” e “CONTÉM DERIVADOS DE AMÊNDOA”. Também afirmou que contém castanha-do-pará, embora o rótulo informe que pode conter."
                     }
             ],
             "resposta final para o usuário": (
@@ -349,6 +382,22 @@ EXEMPLOS_FEW_SHOT = [
             "motivos": [],
             "possíveis omissões da análise anterior": [],
             "incertezas": [],
+            "perguntas para análise": [
+                                {
+                                    "1. O alimento é seguro para consumo? Seja claro e objetivo": "Sim",
+                                    "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
+                                    " qual (quais) restrições eles se relacionam? Liste somente todos "
+                                    "os ingredientes e/ou advertências que apresentam algum risco "
+                                    "para a restrição alimentar do usuário, em ordem de aparição do "
+                                    "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
+                                    "de advertências).": "nenhum alimento se relaciona com as restrições do usuário.",
+                                    "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
+                                    "a recomendação correta para o usuário, considerando os ingredientes"
+                                    " e/ou advertências do rótulo do produto em relação à restrição do "
+                                    "usuário? Ele encontrou todos os motivos do porquê o alimento não "
+                                    "é seguro?": "Sim, o resultado “não foram identificados riscos” está correto. Não há ingredientes ou advertências relacionados ao leite de origem animal no texto fornecido; portanto, não há motivos de risco dessa restrição a apontar."
+                                }
+            ],
             "resposta final para o usuário": (
                 "Não foram identificados ingredientes ou advertências "
                 "relacionados ao leite de origem animal no texto fornecido. "
