@@ -625,28 +625,81 @@ def mandar_para_groq(resultado_regras: dict):
         )
     })
 
-    resposta = client.chat.completions.create(
-        model=MODELO,
-        messages=mensagens,
-        temperature=0,
-        response_format={"type": "json_object"}
+    
+    for tentativa in range(2):
+        mensagens_tentativa = list(mensagens)
+
+        # Na segunda tentativa, reforça o formato esperado.
+        if tentativa == 1:
+            mensagens_tentativa.append({
+                "role": "user",
+                "content": (
+                    "A tentativa anterior falhou ao gerar ou validar "
+                    "a resposta. Faça novamente a análise e retorne "
+                    "exclusivamente um único objeto JSON válido, "
+                    "sem Markdown, sem blocos de código e sem texto "
+                    "antes ou depois do JSON. Respeite a estrutura "
+                    "e os campos definidos nas instruções anteriores."
+                )
+            })
+
+        try:
+            resposta = client.chat.completions.create(
+                model=MODELO,
+                messages=mensagens_tentativa,
+                temperature=0,
+                response_format={"type": "json_object"}
+            )
+
+            conteudo = resposta.choices[0].message.content
+
+            if not conteudo:
+                raise ValueError(
+                    "A Groq retornou uma resposta vazia."
+                )
+
+            dados = json.loads(conteudo)
+
+            if not isinstance(dados, dict):
+                raise ValueError(
+                    "A resposta da IA não é um objeto JSON."
+                )
+
+            # Sucesso: encerra a função com o JSON validado.
+            return dados
+
+        except BadRequestError as erro:
+            # Repete somente a falha de validação JSON
+            # conhecida; outros erros são propagados.
+            if (
+                tentativa == 0
+                and "json_validate_failed" in str(erro)
+            ):
+                print(
+                    "Falha na validação JSON da Groq. "
+                    "Tentando novamente..."
+                )
+                continue
+
+            raise
+
+        except (json.JSONDecodeError, ValueError) as erro:
+            if tentativa == 0:
+                print(
+                    f"Resposta inválida da Groq: {erro}. "
+                    "Tentando novamente..."
+                )
+                continue
+
+            raise ValueError(
+                "A Groq não retornou um JSON válido "
+                "após duas tentativas."
+            ) from erro
+
+    raise RuntimeError(
+        "Não foi possível concluir a análise com a Groq."
     )
 
-    conteudo = resposta.choices[0].message.content
-
-    if not conteudo:
-        raise ValueError(
-            "A Groq retornou uma resposta vazia."
-        )
-
-    dados = json.loads(conteudo)
-
-    if not isinstance(dados, dict):
-        raise ValueError(
-            "A resposta da IA não é um objeto JSON."
-        )
-
-    return dados
 
 
 def analisar_com_ia_groq(resposta: dict):
