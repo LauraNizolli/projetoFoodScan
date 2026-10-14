@@ -1,14 +1,14 @@
 from normalizarFunc import normalizar
 import re
 from regras import regras
-from groq_ia import analisar_com_ia
+from groq_ia import analisar_com_ia_groq
+from gemini_ia import analisar_com_ia_gemini
 
 # ==========================
 # ANÁLISE
 # ==========================
 
 def executar_analise(
-    nome_produto,
     texto_ocr,
     ingredientes,
     advertencias,
@@ -125,9 +125,6 @@ def executar_analise(
     if motivos:
 
         resposta = {
-
-            "produto":
-                nome_produto,
                 
             "texto original da OCR":
                 texto_ocr,
@@ -152,9 +149,6 @@ def executar_analise(
     else:
 
         resposta = {
-
-            "produto":
-                nome_produto,
                 
             "texto original da OCR":
                 texto_ocr,
@@ -176,4 +170,4 @@ def executar_analise(
         }
 
 
-    return analisar_com_ia(resposta)
+    return analisar_com_ia_gemini(resposta)

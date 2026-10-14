@@ -1,16 +1,13 @@
 from fastapi import UploadFile, File, Form
 from executar_ocr import executar_ocr
 from executar_analise import executar_analise
-from extrairImg import extrair_dados_rotulo
+from extrair_dados_rotulo import extrair_dados_rotulo
 
 
 
 async def analisar_imagem(
 
     imagem: UploadFile = File(...),
-
-    nome_produto: str = Form(...),
-
     restricoes: str = Form(...)
 ):
 
@@ -65,7 +62,6 @@ async def analisar_imagem(
 
     analise = executar_analise(
 
-        nome_produto,
         texto_ocr,
         ingredientes,
         advertencias,

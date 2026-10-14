@@ -20,6 +20,8 @@ client = Groq(api_key=api_key)
 
 MODELO = "openai/gpt-oss-20b"
 
+print(MODELO)
+
 EXEMPLOS_FEW_SHOT = [
     {
         "entrada": {
@@ -647,7 +649,7 @@ def mandar_para_groq(resultado_regras: dict):
     return dados
 
 
-def analisar_com_ia(resposta: dict):
+def analisar_com_ia_groq(resposta: dict):
     resposta_ia = mandar_para_groq(resposta)
 
     return {

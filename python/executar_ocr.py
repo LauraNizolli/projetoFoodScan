@@ -28,8 +28,8 @@ def reduzir_imagem(conteudo: bytes) -> bytes:
         # Reduz as dimensões mantendo a proporção
         imagem.thumbnail((1600, 1600))
 
-        # Começa tentando salvar com qualidade 85
-        qualidade = 85
+        # Começa tentando salvar com qualidade 100
+        qualidade = 100
 
         # Inicializa a variavel
         conteudo_reduzido = conteudo
@@ -57,7 +57,7 @@ def reduzir_imagem(conteudo: bytes) -> bytes:
                 return conteudo_reduzido
 
             # Se ainda estiver grande, diminui a qualidade
-            qualidade -= 10
+            qualidade -= 5
 
         # Retorna a última versão gerada
         return conteudo_reduzido

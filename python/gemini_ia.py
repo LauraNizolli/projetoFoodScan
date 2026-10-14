@@ -8,6 +8,21 @@ client = genai.Client(
     api_key=os.getenv("GEMINI_API_KEY")
 )
 
+MODELO = "gemini-2.5-flash"
+
+print(MODELO)
+
+def analisar_com_ia_gemini(resposta):
+
+    resposta_ia = verificar_com_ia(
+        resposta
+    )
+
+    return {
+        "analise_regras": resposta,
+        "analise_ia": resposta_ia
+    }
+
 
 def verificar_com_ia(resultado_regras):
     prompt = f"""
@@ -29,7 +44,7 @@ Não adicione informações irrelevantes, não invente ingredientes ou advertên
 
 Retorne um JSON com exatamente a seguinte estrutura:
 
-{
+{{
     "resultado_final": "não recomendado",
     "motivos": [
         {{
@@ -50,8 +65,25 @@ Retorne um JSON com exatamente a seguinte estrutura:
             "motivo": "explicação da incerteza"
         }}
     ],
+    "perguntas para análise": [
+        {{
+            "1. O alimento é seguro para consumo? Seja claro e objetivo": "SIM/NÃO",
+            "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
+            " qual (quais) restrições eles se relacionam? Liste somente todos "
+            "os ingredientes e/ou advertências que apresentam algum risco "
+            "para a restrição alimentar do usuário, em ordem de aparição do "
+            "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
+            "de advertências).": "alimentos que estão relacionados às restrições. Se não tiver nenhum, escreva 'nenhum alimento "
+            "se relaciona com as restrições do usuário'",
+            "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
+            "a recomendação correta para o usuário, considerando os ingredientes"
+            " e/ou advertências do rótulo do produto em relação à restrição do "
+            "usuário? Ele encontrou todos os motivos do porquê o alimento não "
+            "é seguro?": "Sim/Não, o resultado "não recomendado/recomendado" está/não está correto. Encontrou/Não encontrou todos os motivos."
+        }}
+    ]
     "resposta final para o usuário": "mensagem resumida e clara"
-}
+}}
 
 Regras para preencher os campos:
 
@@ -80,19 +112,11 @@ Retorne exclusivamente um JSON válido, sem Markdown, sem blocos de código e se
 """
 
     resposta = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model= MODELO,
         contents=prompt
     )
 
+    print(resposta)
+
     return resposta.text
 
-def analisar_com_ia(resposta: dict):
-
-    resposta_ia = verificar_com_ia(
-        resposta
-    )
-
-    return {
-        "analise_regras": resposta,
-        "analise_ia": resposta_ia
-    }

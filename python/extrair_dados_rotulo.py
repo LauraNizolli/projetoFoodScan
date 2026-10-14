@@ -216,6 +216,8 @@ def extrair_dados_rotulo(
     # ==========================
     # RETORNO
     # ==========================
+    print(ingredientes)
+    print(advertencias)
 
     return {
 

@@ -6,10 +6,9 @@ from fastapi import (
 )
 
 from executar_ocr import executar_ocr
-from extrairImg import extrair_dados_rotulo
+from extrair_dados_rotulo import extrair_dados_rotulo
 from executar_analise import executar_analise
 from fastapi.middleware.cors import CORSMiddleware
-from analisar_imagem import analisar_imagem
 
 
 
@@ -42,26 +41,43 @@ def home():
 
 @app.post("/analisar")
 def analisar(
-    nome_produto: str = Form(...),
     texto_ocr: str = Form(...),
     ingredientes: str = Form(...),
     advertencias: str = Form(...),
     restricoes: str = Form(...)
 ):
 
-    return executar_analise(
 
-        nome_produto,
+    lista_restricoes = [
+            r.strip()
+            for r
+            in restricoes.split(",")
+        ]
 
-        texto_ocr,
+    analise = executar_analise(
+            
+            texto_ocr,
+    
+            ingredientes,
+    
+            advertencias,
+    
+            lista_restricoes
+        )
 
-        ingredientes,
+    return {
+        "texto_ocr":
+            texto_ocr,
 
-        advertencias,
+        "ingredientes_extraidos":
+            ingredientes,
 
-        restricoes
-    )
+        "advertencias_extraidas":
+            advertencias,
 
+        "analise":
+            analise
+    }
 
 # ==========================
 # ANÁLISE POR IMAGEM
@@ -71,9 +87,6 @@ def analisar(
 async def analisar_imagem(
 
     imagem: UploadFile = File(...),
-
-    nome_produto: str = Form(...),
-
     restricoes: str = Form(...)
 ):
 
@@ -103,6 +116,7 @@ async def analisar_imagem(
         ]
     )
 
+    
 
     advertencias = (
         dados_rotulo[
@@ -127,8 +141,6 @@ async def analisar_imagem(
     # ==========================
 
     analise = executar_analise(
-
-        nome_produto,
         
         texto_ocr,
 
