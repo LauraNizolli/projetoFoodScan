@@ -79,6 +79,23 @@ EXEMPLOS_FEW_SHOT = [
                 }
             ],
             "incertezas": [],
+            "perguntas para análise": [
+                                {
+                                    "1. O alimento é seguro para consumo? Seja claro e objetivo": "SIM/NÃO",
+                                    "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
+                                    " qual (quais) restrições eles se relacionam? Liste somente todos "
+                                    "os ingredientes e/ou advertências que apresentam algum risco "
+                                    "para a restrição alimentar do usuário, em ordem de aparição do "
+                                    "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
+                                    "de advertências).": "alimentos que estão relacionados às restrições. Se não tiver nenhum, escreva 'nenhum alimento "
+                                    "se relaciona com as restrições do usuário'",
+                                    "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
+                                    "a recomendação correta para o usuário, considerando os ingredientes"
+                                    " e/ou advertências do rótulo do produto em relação à restrição do "
+                                    "usuário? Ele encontrou todos os motivos do porquê o alimento não "
+                                    "é seguro?": "Sim/Não, o resultado 'não recomendado/recomendado' está/não está correto. Encontrou/Não encontrou todos os motivos."
+                                }
+            ],
             "resposta final para o usuário": (
                 "O produto não é recomendado porque contém derivados de soja e flocos de soja "
                 "e pode conter ovo, que são imcompatíveis com as restrições à soja e ovos do usuário."
@@ -86,156 +103,6 @@ EXEMPLOS_FEW_SHOT = [
         }
     },
 
-        # Exemplo: análise correta com advertência de soja.
-    {
-        "entrada": {
-            "produto": "Biscoito de Arroz",
-            "texto original da OCR": (
-                "INFORMAÇÃO NUTRICION\nPorções por embalagem: 5\nPorção: 30 g (13"
-                "unidades)\n100 g\nValor energético (kcal)\n375\nCarboidratos (g)\n78\nAçúcares"
-                "totais (g)\n1,2\nAçúcares adicionados (g)\n0\nProteínas (g)\n7,6\nGorduras tot"
-                "ais (g)\n2,5\n30 g\n115\n24\n0\n0\n2,3\n0,7\n%VD*\n6\n8\nGorduras saturadas (g"
-                ")\n0,8\nGorduras trans (g)\n0\nGorduras monoinsaturartas (g)\n0,9\nGorduras po"
-                "li-insatura\ns (g)\n1\n0\n0,3\n0,3\nColesterol (mg)\n0\nFibras alimentares (g)"
-                "\n5\nSódio (mg)\n500\n1,5\n150\n5\n1\n0\n0\n1\n2\n0\n6\n8\n*Percentual de valo"
-                "res diários fornecidos pela porção.\nINGREDIENTES: arroz integral, sal, pápric"
-                "a picante, alho, pimenta vermelha, gengibre,\naromatizante natural e antiumect"
-                "ante: dióxido de silício.\nALÉRGICOS: PODE CONTER SOJA. NÃO CONTÉM GLÚTEN."
-            ),
-            "ingredientes": (
-                "arroz integral, sal, páprica picante, alho, "
-                "pimenta vermelha, gengibre, aromatizante natural "
-                "e antiumectante: dióxido de silício."
-            ),
-            "advertencias": (
-                "ALÉRGICOS: PODE CONTER SOJA. NÃO CONTÉM GLÚTEN."
-            ),
-            "restricoes": ["soja", "leite"],
-            "resultado": "não recomendado",
-            "motivos": [
-                "O rótulo informa: pode conter soja"
-            ]
-        },
-        "saida": {
-            "resultado_final": "não recomendado",
-            "motivos": [
-                {
-                    "ingrediente_com_risco": "PODE CONTER SOJA",
-                    "restricao_relacionada": "soja"
-                }
-            ],
-            "possíveis omissões da análise anterior": [],
-            "incertezas": [],
-            "resposta final para o usuário": (
-                "O produto não é recomendado para as restrições "
-                "informadas porque o rótulo declara que pode conter soja. "
-                "Não foram identificados riscos relacionados ao leite "
-                "no texto fornecido."
-            )
-        }
-    },
-
-    # Exemplo: advertência de soja não corresponde às restrições.
-    {
-        "entrada": {
-            "produto": "Biscoito de Arroz",
-            "texto original da OCR": (
-                "INFORMAÇÃO NUTRICION\nPorções por embalagem: 5\nPorção: 30 g ("
-                "13 unidades)\n100 g\nValor energético (kcal)\n375\nCarboidratos (g)\n78\nAçúca"
-                "res totais (g)\n1,2\nAçúcares adicionados (g)\n0\nProteínas (g)\n7,6\nGorduras"
-                "totais (g)\n2,5\n30 g\n115\n24\n0\n0\n2,3\n0,7\n%VD*\n6\n8\nGorduras saturadas"
-                "(g)\n0,8\nGorduras trans (g)\n0\nGorduras monoinsaturartas (g)\n0,9\nGorduras"
-                "poli-insatura\ns (g)\n1\n0\n0,3\n0,3\nColesterol (mg)\n0\nFibras alimentares ("
-                "g)\n5\nSódio (mg)\n500\n1,5\n150\n5\n1\n0\n0\n1\n2\n0\n6\n8\n*Percentual de va"
-                "lores diários fornecidos pela porção.\nINGREDIENTES: arroz integral, sal, pápr"
-                "ica picante, alho, pimenta vermelha, gengibre,\naromatizante natural e antiume"
-                "ctante: dióxido de silício.\nALÉRGICOS: PODE CONTER SOJA. NÃO CONTÉM GLÚTEN."
-            ),
-            "ingredientes": (
-                "arroz integral, sal, páprica picante, alho, "
-                "pimenta vermelha, gengibre, aromatizante natural "
-                "e antiumectante: dióxido de silício."
-            ),
-            "advertencias": (
-                "ALÉRGICOS: PODE CONTER SOJA. NÃO CONTÉM GLÚTEN."
-            ),
-            "restricoes": ["glúten", "lactose"],
-            "resultado": "não foram identificados riscos",
-            "motivos": []
-        },
-        "saida": {
-            "resultado_final": "não foram identificados riscos",
-            "motivos": [],
-            "possíveis omissões da análise anterior": [],
-            "incertezas": [],
-            "resposta final para o usuário": (
-                "Não foram identificados riscos relacionados ao glúten "
-                "ou à lactose no texto fornecido. O rótulo declara "
-                "não conter glúten e não apresenta ingredientes ou "
-                "advertências que indiquem lactose. O aviso sobre soja "
-                "não corresponde às restrições informadas. "
-                "Essa conclusão não constitui garantia de segurança."
-            )
-        }
-    },
-
-    # Exemplo: relacionar atum à categoria peixes.
-    {
-        "entrada": {
-            "produto": "Atum enlatado",
-            "texto original da OCR": (
-                "www.gomesdacosta.cem.br\n0800 704 1954\nSAC\nRegistro no Ministé"
-                "rio da Agricultura SIF/DIPOA sob n° 0019/2087.\nConsumir antes de: ver tampa."
-                "INGREDIENTES: Atum, água, caldo\nvegetal lágua, flocos de soja e extratos de c"
-                "enoura e aipo e sal.\nALÉRGICOS: CONTÉM PEIXE E DERIVADOS DE SOJA.\nPODE CONTE"
-                "R OVO. NÃO CONTÉM GLÚTEN.\nINFORMAÇÃO NUTRICIONAL\nPorção: 120 g (1 lata)\nVal"
-                "or energético (kcal)\nCarboidratos (g)\nAçúcares totais (g)\nAçúcares adiciona"
-                "dos (g)\nProicinas\n1100 g|120 g| %VD*\n109\n5\n0\n0\n0\n0\n0\n20\n24\n13\n48\""
-                "n2"
-            ),
-            "ingredientes": (
-                "Atum, água, caldo vegetal lágua, flocos de soja "
-                "e extratos de cenoura e aipo e sal."
-            ),
-            "advertencias": (
-                "ALÉRGICOS: CONTÉM PEIXE E DERIVADOS DE SOJA. "
-                "PODE CONTER OVO. NÃO CONTÉM GLÚTEN. "
-                "INFORMAÇÃO NUTRICIONAL Porção: 120 g (1 lata) "
-                "Valor energético (kcal) Carboidratos (g) "
-                "Açúcares totais (g) Açúcares adicionados (g) "
-                "Proicinas 1100 g|120 g| %VD* "
-                "109 5 0 0 0 0 0 20 24 13 48 2"
-            ),
-            "restricoes": ["peixes", "glúten"],
-            "resultado": "não recomendado",
-            "motivos": [
-                "Contém atum, incompatível com restrição ou alergia a peixes",
-                "O rótulo informa: contém peixe"
-            ]
-        },
-        "saida": {
-            "resultado_final": "não recomendado",
-            "motivos": [
-                {
-                    "ingrediente_com_risco": "Atum",
-                    "restricao_relacionada": "peixes"
-                },
-                {
-                    "ingrediente_com_risco": "CONTÉM PEIXE",
-                    "restricao_relacionada": "peixes"
-                }
-            ],
-            "possíveis omissões da análise anterior": [],
-            "incertezas": [],
-            "resposta final para o usuário": (
-                "O produto não é recomendado porque contém atum "
-                "e o rótulo declara conter peixe, relacionados "
-                "à restrição a peixes. O rótulo declara não conter "
-                "glúten. Os avisos sobre soja e ovo não correspondem "
-                "às restrições informadas."
-            )
-        }
-    },
 
         # Creme de aveia: corrigir a restrição relacionada ao ingrediente.
     {
@@ -421,6 +288,23 @@ EXEMPLOS_FEW_SHOT = [
                 }
             ],
             "incertezas": [],
+            "perguntas para análise": [
+                    {
+                        "1. O alimento é seguro para consumo? Seja claro e objetivo": "SIM/NÃO",
+                        "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
+                        " qual (quais) restrições eles se relacionam? Liste somente todos "
+                        "os ingredientes e/ou advertências que apresentam algum risco "
+                        "para a restrição alimentar do usuário, em ordem de aparição do "
+                        "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
+                        "de advertências).": "alimentos que estão relacionados às restrições. Se não tiver nenhum, escreva 'nenhum alimento "
+                        "se relaciona com as restrições do usuário'",
+                        "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
+                        "a recomendação correta para o usuário, considerando os ingredientes"
+                        " e/ou advertências do rótulo do produto em relação à restrição do "
+                        "usuário? Ele encontrou todos os motivos do porquê o alimento não "
+                        "é seguro?": "Sim/Não, o resultado 'não recomendado/recomendado' está/não está correto. Encontrou/Não encontrou todos os motivos."
+                    }
+            ],
             "resposta final para o usuário": (
                 "O produto não é recomendado para a restrição a "
                 "oleaginosas: contém amêndoa e pode conter "
@@ -523,6 +407,23 @@ Retorne um JSON com exatamente esta estrutura:
             "restricao_relacionada": "nome da restrição",
             "motivo": "explicação da incerteza"
         }
+    ],
+    "perguntas para análise": [
+            {
+                "1. O alimento é seguro para consumo? Seja claro e objetivo": "SIM/NÃO",
+                "2. Quais ingredientes e/ou advertências apresentam algum risco, e com"
+                " qual (quais) restrições eles se relacionam? Liste somente todos "
+                "os ingredientes e/ou advertências que apresentam algum risco "
+                "para a restrição alimentar do usuário, em ordem de aparição do "
+                "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
+                "de advertências).": "alimentos que estão relacionados às restrições. Se não tiver nenhum, escreva 'nenhum alimento "
+                "se relaciona com as restrições do usuário'",
+                "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
+                "a recomendação correta para o usuário, considerando os ingredientes"
+                " e/ou advertências do rótulo do produto em relação à restrição do "
+                "usuário? Ele encontrou todos os motivos do porquê o alimento não "
+                "é seguro?": "Sim/Não, o resultado "não recomendado/recomendado" está/não está correto. Encontrou/Não encontrou todos os motivos."
+            }
     ],
     "resposta final para o usuário": "mensagem resumida e clara"
 }
