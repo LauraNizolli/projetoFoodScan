@@ -169,4 +169,4 @@ def executar_analise(
         }
 
 
-    return analisar_com_ia_gemini(resposta)
+    return analisar_com_ia_groq(resposta)
