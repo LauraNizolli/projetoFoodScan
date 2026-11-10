@@ -1,7 +1,8 @@
 from normalizarFunc import normalizar
 import re
+from groq_ia import analisar_com_ia_groq
 from regras import regras
-from gemini_ia import analisar_com_ia_gemini
+
 
 # ==========================
 # ANÁLISE

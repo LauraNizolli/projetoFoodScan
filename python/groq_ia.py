@@ -2,7 +2,7 @@ import json
 import os
 
 from dotenv import load_dotenv
-from groq import Groq
+from groq import BadRequestError, Groq
 from groq.types.chat import ChatCompletionMessageParam
 
 
@@ -96,7 +96,7 @@ EXEMPLOS_FEW_SHOT = [
                                     "é seguro?": "Sim, o resultado “não recomendado” está correto. Não encontrou todos os motivos: identificou “pode conter ovo”, mas omitiu “flocos de soja” e “CONTÉM DERIVADOS DE SOJA”."
                                 }
             ],
-            "resposta final para o usuário": (
+            "resposta_final_para_o_usuário": (
                 "O produto não é recomendado porque contém derivados de soja e flocos de soja "
                 "e pode conter ovo, que são imcompatíveis com as restrições à soja e ovos do usuário."
             )
@@ -180,7 +180,7 @@ EXEMPLOS_FEW_SHOT = [
                                                 "encontrou todos os motivos corretamente: identificou a aveia, mas a associou à restrição ao glúten, em vez de à restrição à aveia. O rótulo declara “NÃO CONTÉM GLUTEN”."
                                             }
             ],
-            "resposta final para o usuário": (
+            "resposta_final_para_o_usuário": (
                 "O produto não é recomendado porque contém aveia, "
                 "uma das restrições informadas. A análise anterior "
                 "associou a aveia ao glúten incorretamente neste caso: "
@@ -248,7 +248,7 @@ EXEMPLOS_FEW_SHOT = [
                         "no texto fornecido. Não há motivos de risco relacionados ao glúten identificados nesse rótulo, que declara “NÃO CONTÉM GLUTEN”. Os motivos apresentados pela API não são sustentados pelo texto."
                     }
                 ],
-            "resposta final para o usuário": (
+            "resposta_final_para_o_usuário": (
                 "Não foram identificados riscos relacionados ao glúten "
                 "no texto fornecido. O rótulo declara não conter glúten. "
                 "A presença de aveia, por si só, não sustenta os motivos "
@@ -338,7 +338,7 @@ EXEMPLOS_FEW_SHOT = [
                         "é seguro?": "Sim, o resultado “não recomendado” está correto. Não encontrou todos os motivos: omitiu “pasta de amêndoa” e “CONTÉM DERIVADOS DE AMÊNDOA”. Também afirmou que contém castanha-do-pará, embora o rótulo informe que pode conter."
                     }
             ],
-            "resposta final para o usuário": (
+            "resposta_final_para_o_usuário": (
                 "O produto não é recomendado para a restrição a "
                 "oleaginosas: contém amêndoa e pode conter "
                 "castanha-de-caju e castanha-do-pará. "
@@ -398,7 +398,7 @@ EXEMPLOS_FEW_SHOT = [
                                     "é seguro?": "Sim, o resultado “não foram identificados riscos” está correto. Não há ingredientes ou advertências relacionados ao leite de origem animal no texto fornecido; portanto, não há motivos de risco dessa restrição a apontar."
                                 }
             ],
-            "resposta final para o usuário": (
+            "resposta_final_para_o_usuário": (
                 "Não foram identificados ingredientes ou advertências "
                 "relacionados ao leite de origem animal no texto fornecido. "
                 "O nome 'Leite de Amêndoas' não indica, por si só, "
@@ -467,11 +467,11 @@ Retorne um JSON com exatamente esta estrutura:
                 "JSON (ou seja, em ordem de aparição da lista de ingredientes e "
                 "de advertências).": "alimentos que estão relacionados às restrições. Se não tiver nenhum, escreva 'nenhum alimento "
                 "se relaciona com as restrições do usuário'",
-                "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
-                "a recomendação correta para o usuário, considerando os ingredientes"
-                " e/ou advertências do rótulo do produto em relação à restrição do "
-                "usuário? Ele encontrou todos os motivos do porquê o alimento não "
-                "é seguro?": "Sim/Não, o resultado "não recomendado/recomendado" está/não está correto. Encontrou/Não encontrou todos os motivos."
+               "3. A análise do JSON gerado pelo sistema (API) deu como resultado "
+"uma recomendação correta para o usuário, considerando os ingredientes "
+"e/ou advertências do rótulo do produto em relação às restrições "
+"selecionadas? A análise encontrou todos os motivos pelos quais o "
+"alimento pode não ser recomendado?": "Sim/Não. O resultado está/não está correto. Encontrou/Não encontrou todos os motivos."
             }
     ],
     "resposta_final_para_o_usuario": "mensagem resumida e clara"
