@@ -60,15 +60,11 @@ def executar_analise(
             restricao_necessaria = (
                 regras[
                     ingrediente
-                ]["restricao"]
+                ]["restricoes"]
             )
 
 
-            if (
-                restricao_necessaria
-                in
-                lista_restricoes
-            ):
+            if any(r in lista_restricoes for r in restricao_necessaria):
 
                 mensagem = (
                     regras[
@@ -99,18 +95,14 @@ def executar_analise(
             lista_advertencias
         ):
 
-            restricao_necessaria = (
+            restricoes_necessarias = (
                 dados_regra[
-                    "restricao"
+                    "restricoes"
                 ]
             )
 
 
-            if (
-                restricao_necessaria
-                in
-                lista_restricoes
-            ):
+            if any(r in lista_restricoes for r in restricoes_necessarias):
 
                 mensagem = (
                     dados_regra[
