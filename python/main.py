@@ -40,25 +40,6 @@ def home():
 # ANÁLISE POR TEXTO
 # ==========================
 
-@app.post("/analisar")
-def analisar(
-    nome_produto: str = Form(...),
-    ingredientes: str = Form(...),
-    advertencias: str = Form(...),
-    restricoes: str = Form(...)
-):
-
-    return executar_analise(
-
-        nome_produto,
-
-        ingredientes,
-
-        advertencias,
-
-        restricoes
-    )
-
 
 # ==========================
 # ANÁLISE POR IMAGEM
@@ -69,7 +50,7 @@ async def analisar_imagem(
 
     imagem: UploadFile = File(...),
 
-    nome_produto: str = Form(...),
+    nome_produto: str = Form(None),
 
     restricoes: str = Form(...)
 ):

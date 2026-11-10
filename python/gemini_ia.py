@@ -29,7 +29,7 @@ Não adicione informações irrelevantes, não invente ingredientes ou advertên
 
 Retorne um JSON com exatamente a seguinte estrutura:
 
-{
+{{
     "resultado_final": "não recomendado",
     "motivos": [
         {{
@@ -51,7 +51,7 @@ Retorne um JSON com exatamente a seguinte estrutura:
         }}
     ],
     "resposta final para o usuário": "mensagem resumida e clara"
-}
+}}
 
 Regras para preencher os campos:
 
