@@ -70,7 +70,7 @@ Regras para preencher os campos:
 
 6. A ausência de riscos identificados não constitui garantia de segurança alimentar. Baseie a conclusão nas informações disponíveis e nas restrições informadas pelo usuário.
 
-7. No campo "resposta final para o usuário", explique a conclusão de forma simples, objetiva e direta, mencionando os riscos relevantes e as incertezas que possam afetar a decisão.
+7. No campo "resposta final para o usuário", explique a conclusão de forma simples, objetiva e direta, mencionando os riscos relevantes e as incertezas que possam afetar a decisão, e quando for reotrnar o arquivo JSON retorne exatamente com o nome "resposta final apra o usuário".
 
 8. Quando não houver itens em uma lista, retorne uma lista vazia: [].
 
@@ -80,7 +80,7 @@ Retorne exclusivamente um JSON válido, sem Markdown, sem blocos de código e se
 """
 
     resposta = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model="gemini-2.5-flash",
         contents=prompt
     )
 
