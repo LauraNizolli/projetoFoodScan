@@ -61,7 +61,6 @@ analisar.addEventListener("click", async function() {
     const dados = new FormData()
 
     dados.append("imagem", imagem)
-    dados.append("nome_produto", nomeProduto)
     dados.append("restricoes", listaRestricoes.join(","))
 
     carregamento.classList.remove("oculto")
@@ -70,7 +69,7 @@ analisar.addEventListener("click", async function() {
     try {
 
         const resposta = await fetch(
-            "http://192.168.68.105:8000/analisar-imagem",
+            "http://127.0.0.1:8000/analisar-imagem",
             {
                 method: "POST",
                 body: dados

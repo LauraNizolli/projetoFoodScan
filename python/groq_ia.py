@@ -474,7 +474,7 @@ Retorne um JSON com exatamente esta estrutura:
                 "é seguro?": "Sim/Não, o resultado "não recomendado/recomendado" está/não está correto. Encontrou/Não encontrou todos os motivos."
             }
     ],
-    "resposta final para o usuário": "mensagem resumida e clara"
+    "resposta_final_para_o_usuario": "mensagem resumida e clara"
 }
 
 Regras:
@@ -518,8 +518,8 @@ Relacione cada motivo somente às restrições informadas.
 8. A ausência de riscos identificados não garante segurança alimentar.
 Não use expressões como "seguro para consumo" ou "garantidamente seguro".
 
-9. Em "resposta final para o usuário", explique a conclusão de maneira
-simples e direta, mencionando riscos e incertezas relevantes.
+9. Em "resposta_final_para_o_usuario", explique a conclusão de maneira
+simples e direta, mencionando riscos e incertezas relevantes. é obrigatório incluir esse campo no JSON da sua resposta.
 
 10. Quando uma lista não tiver itens, retorne [].
 
